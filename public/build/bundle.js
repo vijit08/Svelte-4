@@ -3582,15 +3582,15 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[29] = list[i];
-    	child_ctx[31] = i;
+    	child_ctx[28] = list[i];
+    	child_ctx[30] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[32] = list[i];
-    	child_ctx[34] = i;
+    	child_ctx[31] = list[i];
+    	child_ctx[33] = i;
     	return child_ctx;
     }
 
@@ -3598,7 +3598,7 @@ var app = (function () {
     function create_each_block_1$1(key_1, ctx) {
     	let span;
     	let i;
-    	let t_value = /*index*/ ctx[34] + 1 + "";
+    	let t_value = /*index*/ ctx[33] + 1 + "";
     	let t;
     	let span_is_correct_value;
     	let span_id_value;
@@ -3611,14 +3611,14 @@ var app = (function () {
     			span = element("span");
     			i = element("i");
     			t = text(t_value);
-    			add_location(i, file$2, 166, 16, 5902);
-    			attr_dev(span, "is_correct", span_is_correct_value = /*ans*/ ctx[32].is_correct);
+    			add_location(i, file$2, 166, 16, 5804);
+    			attr_dev(span, "is_correct", span_is_correct_value = /*ans*/ ctx[31].is_correct);
     			attr_dev(span, "class", "dot");
-    			attr_dev(span, "id", span_id_value = "ans" + /*index*/ ctx[34]);
-    			attr_dev(span, "value", span_value_value = /*ans*/ ctx[32].answer);
-    			toggle_class(span, "success", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 1 || /*ans*/ ctx[32].is_correct == 1);
-    			toggle_class(span, "unsuccess", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 0);
-    			add_location(span, file$2, 163, 14, 5593);
+    			attr_dev(span, "id", span_id_value = "ans" + /*index*/ ctx[33]);
+    			attr_dev(span, "value", span_value_value = /*ans*/ ctx[31].answer);
+    			toggle_class(span, "success", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 1 || /*ans*/ ctx[31].is_correct == 1);
+    			toggle_class(span, "unsuccess", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 0);
+    			add_location(span, file$2, 163, 14, 5495);
     			this.first = span;
     		},
     		m: function mount(target, anchor) {
@@ -3628,26 +3628,26 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$question*/ 16384 && t_value !== (t_value = /*index*/ ctx[34] + 1 + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*$question*/ 16384 && t_value !== (t_value = /*index*/ ctx[33] + 1 + "")) set_data_dev(t, t_value);
 
-    			if (dirty[0] & /*$question*/ 16384 && span_is_correct_value !== (span_is_correct_value = /*ans*/ ctx[32].is_correct)) {
+    			if (dirty[0] & /*$question*/ 16384 && span_is_correct_value !== (span_is_correct_value = /*ans*/ ctx[31].is_correct)) {
     				attr_dev(span, "is_correct", span_is_correct_value);
     			}
 
-    			if (dirty[0] & /*$question*/ 16384 && span_id_value !== (span_id_value = "ans" + /*index*/ ctx[34])) {
+    			if (dirty[0] & /*$question*/ 16384 && span_id_value !== (span_id_value = "ans" + /*index*/ ctx[33])) {
     				attr_dev(span, "id", span_id_value);
     			}
 
-    			if (dirty[0] & /*$question*/ 16384 && span_value_value !== (span_value_value = /*ans*/ ctx[32].answer)) {
+    			if (dirty[0] & /*$question*/ 16384 && span_value_value !== (span_value_value = /*ans*/ ctx[31].answer)) {
     				attr_dev(span, "value", span_value_value);
     			}
 
     			if (dirty[0] & /*currentselect, $question*/ 16896) {
-    				toggle_class(span, "success", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 1 || /*ans*/ ctx[32].is_correct == 1);
+    				toggle_class(span, "success", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 1 || /*ans*/ ctx[31].is_correct == 1);
     			}
 
     			if (dirty[0] & /*currentselect, $question*/ 16896) {
-    				toggle_class(span, "unsuccess", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 0);
+    				toggle_class(span, "unsuccess", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 0);
     			}
     		},
     		d: function destroy(detaching) {
@@ -3681,11 +3681,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Unattempted";
     			attr_dev(i, "class", "fa fa-eye-slash top");
-    			add_location(i, file$2, 171, 16, 6103);
+    			add_location(i, file$2, 171, 16, 6005);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 172, 16, 6154);
+    			add_location(span, file$2, 172, 16, 6056);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 170, 14, 6064);
+    			add_location(div, file$2, 170, 14, 5966);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3724,11 +3724,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Incorrect";
     			attr_dev(i, "class", "fa fa-close");
-    			add_location(i, file$2, 182, 16, 6770);
+    			add_location(i, file$2, 182, 16, 6672);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 183, 16, 6813);
+    			add_location(span, file$2, 183, 16, 6715);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 181, 14, 6731);
+    			add_location(div, file$2, 181, 14, 6633);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3767,11 +3767,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Correct";
     			attr_dev(i, "class", "fa fa-check");
-    			add_location(i, file$2, 177, 16, 6449);
+    			add_location(i, file$2, 177, 16, 6351);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 178, 16, 6492);
+    			add_location(span, file$2, 178, 16, 6394);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 176, 14, 6410);
+    			add_location(div, file$2, 176, 14, 6312);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3799,11 +3799,11 @@ var app = (function () {
     function create_each_block$1(key_1, ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*i*/ ctx[31] + 1 + "";
+    	let t0_value = /*i*/ ctx[30] + 1 + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "";
+    	let t2_value = JSON.parse(/*dataItem*/ ctx[28].content_text).question + "";
     	let t2;
     	let t3;
     	let td2;
@@ -3811,16 +3811,16 @@ var app = (function () {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
     	let t4;
-    	let show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question);
+    	let show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question);
     	let t5;
     	let show_if;
     	let show_if_1;
     	let t6;
     	let mounted;
     	let dispose;
-    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[29].content_text).answers;
+    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[28].content_text).answers;
     	validate_each_argument(each_value_1);
-    	const get_key = ctx => /*ans*/ ctx[32];
+    	const get_key = ctx => /*ans*/ ctx[31];
     	validate_each_keys(ctx, each_value_1, get_each_context_1$1, get_key);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -3832,9 +3832,9 @@ var app = (function () {
     	let if_block0 = show_if_2 && create_if_block_3$2(ctx);
 
     	function select_block_type(ctx, dirty) {
-    		if (show_if == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 18560) show_if = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) && /*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
+    		if (show_if == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 18560) show_if = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) && /*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
     		if (show_if) return create_if_block_1$2;
-    		if (show_if_1 == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 18560) show_if_1 = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) && !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
+    		if (show_if_1 == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 18560) show_if_1 = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) && !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
     		if (show_if_1) return create_if_block_2$2;
     	}
 
@@ -3866,18 +3866,18 @@ var app = (function () {
     			t6 = space();
     			attr_dev(td0, "class", "center");
     			attr_dev(td0, "tabindex", "0");
-    			add_location(td0, file$2, 158, 8, 5297);
+    			add_location(td0, file$2, 158, 8, 5199);
     			attr_dev(td1, "id", "questions");
     			attr_dev(td1, "tabindex", "0");
-    			add_location(td1, file$2, 159, 8, 5351);
+    			add_location(td1, file$2, 159, 8, 5253);
     			attr_dev(div, "class", "center");
-    			add_location(div, file$2, 161, 10, 5474);
-    			add_location(td2, file$2, 160, 8, 5458);
-    			toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
-    			toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
-    			toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
-    			toggle_class(tr, "un", /*showunattempt*/ ctx[10] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
-    			add_location(tr, file$2, 152, 6, 4489);
+    			add_location(div, file$2, 161, 10, 5376);
+    			add_location(td2, file$2, 160, 8, 5360);
+    			toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
+    			toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
+    			toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
+    			toggle_class(tr, "un", /*showunattempt*/ ctx[10] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
+    			add_location(tr, file$2, 152, 6, 4391);
     			this.first = tr;
     		},
     		m: function mount(target, anchor) {
@@ -3906,7 +3906,7 @@ var app = (function () {
     					td1,
     					"click",
     					function () {
-    						if (is_function(/*r*/ ctx[15](/*i*/ ctx[31]))) /*r*/ ctx[15](/*i*/ ctx[31]).apply(this, arguments);
+    						if (is_function(/*r*/ ctx[15](/*i*/ ctx[30]))) /*r*/ ctx[15](/*i*/ ctx[30]).apply(this, arguments);
     					},
     					false,
     					false,
@@ -3918,17 +3918,17 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$question*/ 16384 && t0_value !== (t0_value = /*i*/ ctx[31] + 1 + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*$question*/ 16384 && t2_value !== (t2_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*$question*/ 16384 && t0_value !== (t0_value = /*i*/ ctx[30] + 1 + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*$question*/ 16384 && t2_value !== (t2_value = JSON.parse(/*dataItem*/ ctx[28].content_text).question + "")) set_data_dev(t2, t2_value);
 
     			if (dirty[0] & /*$question, currentselect*/ 16896) {
-    				each_value_1 = JSON.parse(/*dataItem*/ ctx[29].content_text).answers;
+    				each_value_1 = JSON.parse(/*dataItem*/ ctx[28].content_text).answers;
     				validate_each_argument(each_value_1);
     				validate_each_keys(ctx, each_value_1, get_each_context_1$1, get_key);
     				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value_1, each_1_lookup, div, destroy_block, create_each_block_1$1, t4, get_each_context_1$1);
     			}
 
-    			if (dirty[0] & /*dummyarray, $question*/ 16512) show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question);
+    			if (dirty[0] & /*dummyarray, $question*/ 16512) show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question);
 
     			if (show_if_2) {
     				if (if_block0) ; else {
@@ -3952,19 +3952,19 @@ var app = (function () {
     			}
 
     			if (dirty[0] & /*showcorrect, questioncorrect, $question, dummyarray*/ 18576) {
-    				toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
+    				toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
     			}
 
     			if (dirty[0] & /*showincorrect, questioncorrect, $question, dummyarray*/ 18592) {
-    				toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
+    				toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
     			}
 
     			if (dirty[0] & /*showall, questioncorrect, $question, dummyarray*/ 18568) {
-    				toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
+    				toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
     			}
 
     			if (dirty[0] & /*showunattempt, dummyarray, $question*/ 17536) {
-    				toggle_class(tr, "un", /*showunattempt*/ ctx[10] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
+    				toggle_class(tr, "un", /*showunattempt*/ ctx[10] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
     			}
     		},
     		d: function destroy(detaching) {
@@ -4119,7 +4119,7 @@ var app = (function () {
 
     	let each_value = /*$question*/ ctx[14];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*dataItem*/ ctx[29];
+    	const get_key = ctx => /*dataItem*/ ctx[28];
     	validate_each_keys(ctx, each_value, get_each_context$1, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -4216,64 +4216,64 @@ var app = (function () {
     			add_location(link1, file$2, 112, 0, 2710);
     			add_location(header, file$2, 113, 0, 2754);
     			attr_dev(i0, "class", "fa fa-bar-chart result");
-    			add_location(i0, file$2, 119, 6, 3014);
+    			add_location(i0, file$2, 119, 6, 2916);
     			attr_dev(b0, "class", "result");
-    			add_location(b0, file$2, 118, 4, 2988);
-    			add_location(br0, file$2, 120, 8, 3069);
+    			add_location(b0, file$2, 118, 4, 2890);
+    			add_location(br0, file$2, 120, 8, 2971);
     			attr_dev(div0, "class", "result-item");
     			attr_dev(div0, "tabindex", "0");
     			add_location(div0, file$2, 117, 2, 2846);
     			attr_dev(i1, "class", "fa fa-bars all");
-    			add_location(i1, file$2, 124, 6, 3260);
+    			add_location(i1, file$2, 124, 6, 3162);
     			attr_dev(b1, "class", "all");
-    			add_location(b1, file$2, 123, 4, 3237);
-    			add_location(br1, file$2, 125, 8, 3317);
+    			add_location(b1, file$2, 123, 4, 3139);
+    			add_location(br1, file$2, 125, 8, 3219);
     			attr_dev(div1, "class", "result-item");
     			attr_dev(div1, "tabindex", "0");
-    			add_location(div1, file$2, 122, 2, 3094);
+    			add_location(div1, file$2, 122, 2, 2996);
     			attr_dev(i2, "class", "fa fa-check correct");
-    			add_location(i2, file$2, 129, 6, 3515);
+    			add_location(i2, file$2, 129, 6, 3417);
     			attr_dev(b2, "class", "correct");
-    			add_location(b2, file$2, 128, 4, 3488);
-    			add_location(br2, file$2, 130, 8, 3573);
+    			add_location(b2, file$2, 128, 4, 3390);
+    			add_location(br2, file$2, 130, 8, 3475);
     			attr_dev(div2, "class", "result-item");
     			attr_dev(div2, "tabindex", "0");
-    			add_location(div2, file$2, 127, 2, 3345);
+    			add_location(div2, file$2, 127, 2, 3247);
     			attr_dev(i3, "class", "fa fa-close incorrect");
-    			add_location(i3, file$2, 134, 6, 3772);
+    			add_location(i3, file$2, 134, 6, 3674);
     			attr_dev(b3, "class", "incorrect");
-    			add_location(b3, file$2, 133, 4, 3743);
-    			add_location(br3, file$2, 135, 8, 3840);
+    			add_location(b3, file$2, 133, 4, 3645);
+    			add_location(br3, file$2, 135, 8, 3742);
     			attr_dev(div3, "class", "result-item");
     			attr_dev(div3, "tabindex", "0");
-    			add_location(div3, file$2, 132, 2, 3600);
+    			add_location(div3, file$2, 132, 2, 3502);
     			attr_dev(i4, "class", "fa fa-eye-slash unattempt");
-    			add_location(i4, file$2, 139, 6, 4041);
+    			add_location(i4, file$2, 139, 6, 3943);
     			attr_dev(b4, "class", "unattempt");
-    			add_location(b4, file$2, 138, 4, 4012);
-    			add_location(br4, file$2, 140, 8, 4102);
+    			add_location(b4, file$2, 138, 4, 3914);
+    			add_location(br4, file$2, 140, 8, 4004);
     			attr_dev(div4, "class", "result-item");
     			attr_dev(div4, "tabindex", "0");
-    			add_location(div4, file$2, 137, 2, 3869);
-    			add_location(br5, file$2, 141, 8, 4129);
+    			add_location(div4, file$2, 137, 2, 3771);
+    			add_location(br5, file$2, 141, 8, 4031);
     			attr_dev(div5, "class", "container");
     			add_location(div5, file$2, 116, 0, 2819);
     			attr_dev(p, "class", "time font-700");
     			attr_dev(p, "tabindex", "0");
-    			add_location(p, file$2, 143, 0, 4145);
+    			add_location(p, file$2, 143, 0, 4047);
     			attr_dev(th0, "class", "first");
     			attr_dev(th0, "tabindex", "0");
-    			add_location(th0, file$2, 147, 6, 4272);
+    			add_location(th0, file$2, 147, 6, 4174);
     			attr_dev(th1, "class", "second");
     			attr_dev(th1, "tabindex", "0");
-    			add_location(th1, file$2, 148, 6, 4324);
+    			add_location(th1, file$2, 148, 6, 4226);
     			attr_dev(th2, "class", "third");
     			attr_dev(th2, "tabindex", "0");
-    			add_location(th2, file$2, 149, 6, 4378);
-    			add_location(tr, file$2, 146, 4, 4260);
-    			add_location(table, file$2, 145, 2, 4247);
+    			add_location(th2, file$2, 149, 6, 4280);
+    			add_location(tr, file$2, 146, 4, 4162);
+    			add_location(table, file$2, 145, 2, 4149);
     			attr_dev(div6, "class", "table");
-    			add_location(div6, file$2, 144, 0, 4224);
+    			add_location(div6, file$2, 144, 0, 4126);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4356,11 +4356,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(div0, "click", /*click_handler*/ ctx[16], false, false, false),
-    					listen_dev(div1, "click", /*click_handler_1*/ ctx[17], false, false, false),
-    					listen_dev(div2, "click", /*click_handler_2*/ ctx[18], false, false, false),
-    					listen_dev(div3, "click", /*click_handler_3*/ ctx[19], false, false, false),
-    					listen_dev(div4, "click", /*click_handler_4*/ ctx[20], false, false, false)
+    					listen_dev(div1, "click", /*click_handler*/ ctx[16], false, false, false),
+    					listen_dev(div2, "click", /*click_handler_1*/ ctx[17], false, false, false),
+    					listen_dev(div3, "click", /*click_handler_2*/ ctx[18], false, false, false),
+    					listen_dev(div4, "click", /*click_handler_3*/ ctx[19], false, false, false)
     				];
 
     				mounted = true;
@@ -4458,11 +4457,11 @@ var app = (function () {
     	let $allques;
     	let $question;
     	validate_store(disable1, 'disable1');
-    	component_subscribe($$self, disable1, $$value => $$invalidate(25, $disable1 = $$value));
+    	component_subscribe($$self, disable1, $$value => $$invalidate(24, $disable1 = $$value));
     	validate_store(disable2, 'disable2');
-    	component_subscribe($$self, disable2, $$value => $$invalidate(26, $disable2 = $$value));
+    	component_subscribe($$self, disable2, $$value => $$invalidate(25, $disable2 = $$value));
     	validate_store(timetaken, 'timetaken');
-    	component_subscribe($$self, timetaken, $$value => $$invalidate(27, $timetaken = $$value));
+    	component_subscribe($$self, timetaken, $$value => $$invalidate(26, $timetaken = $$value));
     	validate_store(allques, 'allques');
     	component_subscribe($$self, allques, $$value => $$invalidate(13, $allques = $$value));
     	validate_store(question, 'question');
@@ -4570,33 +4569,26 @@ var app = (function () {
 
     	const click_handler = () => {
     		$$invalidate(3, showall = true);
-    		$$invalidate(4, showcorrect = true);
-    		$$invalidate(5, showincorrect = false);
-    		$$invalidate(10, showunattempt = false);
-    	};
-
-    	const click_handler_1 = () => {
-    		$$invalidate(3, showall = true);
     		$$invalidate(4, showcorrect = false);
     		$$invalidate(5, showincorrect = false);
     		$$invalidate(10, showunattempt = false);
     	};
 
-    	const click_handler_2 = () => {
+    	const click_handler_1 = () => {
     		$$invalidate(4, showcorrect = true);
     		$$invalidate(5, showincorrect = false);
     		$$invalidate(3, showall = false);
     		$$invalidate(10, showunattempt = false);
     	};
 
-    	const click_handler_3 = () => {
+    	const click_handler_2 = () => {
     		$$invalidate(5, showincorrect = true);
     		$$invalidate(4, showcorrect = false);
     		$$invalidate(3, showall = false);
     		$$invalidate(10, showunattempt = false);
     	};
 
-    	const click_handler_4 = () => {
+    	const click_handler_3 = () => {
     		$$invalidate(10, showunattempt = true);
     		$$invalidate(4, showcorrect = false);
     		$$invalidate(5, showincorrect = false);
@@ -4699,8 +4691,7 @@ var app = (function () {
     		click_handler,
     		click_handler_1,
     		click_handler_2,
-    		click_handler_3,
-    		click_handler_4
+    		click_handler_3
     	];
     }
 

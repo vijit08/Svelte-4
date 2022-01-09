@@ -115,7 +115,7 @@
   <Nav Heading={"uCertify Test Result"} />
 </header>
 <div class="container">
-  <div class="result-item" tabindex="0" on:click={() => {showall = true;showcorrect = true;showincorrect = false;showunattempt = false;}}>
+  <div class="result-item" tabindex="0">
     <b class="result">
       <i class="fa fa-bar-chart result" />{result}%
     </b><br/>Result
