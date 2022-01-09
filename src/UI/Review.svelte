@@ -99,7 +99,7 @@
               ans.is_correct == 0}>{String.fromCharCode(65 + index)}
               <input class="radio_input" type="radio" name="ans" id="ans{index}" is_correct={ans.is_correct} value={ans.answer}
                 checked={ans.answer && ans.is_correct == 1 ? true : false} disabled="disabled"/>
-                <div class:radio_radio={ans.is_correct == 1 || ans.answer} class:wrong={currentselect.includes(ans.answer) &&
+                <div class:radio_radio={ans.is_correct == 1 || ans.answer} class:wrong={$selectedanswer[i]==ans.answer &&
                   ans.is_correct == 0}/>{@html ans.answer}
             </label>
           {/each}

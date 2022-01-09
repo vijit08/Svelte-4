@@ -18,6 +18,7 @@
   import { timetaken } from "../data-store.js";
 
   let dispatch = createEventDispatcher();
+  let localoption=[];
   var count = 0;
   let seconds = 12;
   var secs = 0;
@@ -35,19 +36,15 @@
   //=========================================MAIN LOGIC FUNCTION================================================
   function toggleattempt(l,z, event) {
     Selected.push(event);
-    for (let i = 0; i < correct.length; i++) {
-      let x = JSON.parse(correct[i].content_text).question;
-    }
-
     selectedanswer.update((its) => {
-      return [...Selected];
+      return [...localoption];
     });
 
     selectedanswer.subscribe((items) => {
-      let t = items.filter((c, index) => {
+      let Remove_Duplicate = items.filter((c, index) => {
         return items.indexOf(c) === index;
       });
-      currentselect = [...t];
+      currentselect = [...Remove_Duplicate];
     });
 
     //==========================================TO CHECK CURRENT ANSWER IS RIGHT OR NOT==========================
@@ -72,11 +69,11 @@
   }
 
   attempted.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Remove_Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
 
-    count = t.length;
+    count = Remove_Duplicate.length;
   });
 
   //===========================CORRECT ANSWERS OF ALL QUESTIONS LOGIC=============================================
@@ -194,7 +191,7 @@
             <span class="option-no">{String.fromCharCode(65 + index)}</span>
             <input type="radio" name="ans" id="ans{index}" is_correct={ans.is_correct} value={ans.answer} class="input-items"
               on:click={toggleattempt(i,JSON.parse(dataItem.content_text).question,ans.answer)}
-              checked={currentselect.includes(ans.answer) ? true : false} tabindex="-1"/>{@html ans.answer}
+              bind:group={localoption[i]} tabindex="-1"/>{@html ans.answer}
           </label>
         {/each}
       </div>

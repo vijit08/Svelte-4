@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35731/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -1229,7 +1229,6 @@ var app = (function () {
         .then((response) => response.json())
         .then((data) => {
           question.set(data);
-          //console.log(question);
         });
     }
 
@@ -1620,28 +1619,29 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[29] = list[i];
-    	child_ctx[31] = i;
+    	child_ctx[32] = list[i];
+    	child_ctx[33] = list;
+    	child_ctx[34] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[32] = list[i];
-    	child_ctx[34] = i;
+    	child_ctx[35] = list[i];
+    	child_ctx[37] = i;
     	return child_ctx;
     }
 
-    // (186:4) {#if i == $currentitem}
+    // (183:4) {#if i == $currentitem}
     function create_if_block$4(ctx) {
     	let div2;
     	let div0;
-    	let t0_value = /*i*/ ctx[31] + 1 + "";
+    	let t0_value = /*i*/ ctx[34] + 1 + "";
     	let t0;
     	let t1;
     	let t2;
     	let div1;
-    	let t3_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "";
+    	let t3_value = JSON.parse(/*dataItem*/ ctx[32].content_text).question + "";
     	let t3;
     	let t4;
     	let div3;
@@ -1653,7 +1653,7 @@ var app = (function () {
     	let div4;
     	let t6;
     	let t7;
-    	let t8_value = /*seconds*/ ctx[0].toLocaleString(undefined, { minimumIntegerDigits: 2 }) + "";
+    	let t8_value = /*seconds*/ ctx[1].toLocaleString(undefined, { minimumIntegerDigits: 2 }) + "";
     	let t8;
     	let t9;
     	let button0;
@@ -1662,7 +1662,7 @@ var app = (function () {
     	let t11;
     	let div5;
     	let b;
-    	let t12_value = /*i*/ ctx[31] + 1 + "";
+    	let t12_value = /*i*/ ctx[34] + 1 + "";
     	let t12;
     	let t13;
     	let t14;
@@ -1672,9 +1672,9 @@ var app = (function () {
     	let t16;
     	let t17;
     	let current;
-    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[29].content_text).answers;
+    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[32].content_text).answers;
     	validate_each_argument(each_value_1);
-    	const get_key = ctx => /*ans*/ ctx[32];
+    	const get_key = ctx => /*ans*/ ctx[35];
     	validate_each_keys(ctx, each_value_1, get_each_context_1$3, get_key);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -1739,7 +1739,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button3.$on("click", /*click_handler*/ ctx[14]);
+    	button3.$on("click", /*click_handler*/ ctx[16]);
     	button3.$on("click", /*end*/ ctx[12]);
     	let if_block = /*$isopen*/ ctx[8] && create_if_block_1$4(ctx);
 
@@ -1763,7 +1763,7 @@ var app = (function () {
     			footer = element("footer");
     			span = element("span");
     			div4 = element("div");
-    			t6 = text(/*minutes*/ ctx[1]);
+    			t6 = text(/*minutes*/ ctx[2]);
     			t7 = text(":");
     			t8 = text(t8_value);
     			t9 = space();
@@ -1783,25 +1783,25 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t17 = space();
     			attr_dev(div0, "class", "number");
-    			add_location(div0, file$4, 187, 8, 5686);
+    			add_location(div0, file$4, 184, 8, 5654);
     			attr_dev(div1, "class", "box");
-    			add_location(div1, file$4, 188, 8, 5730);
+    			add_location(div1, file$4, 185, 8, 5698);
     			attr_dev(div2, "class", "main-question");
     			attr_dev(div2, "tabindex", "0");
-    			add_location(div2, file$4, 186, 6, 5636);
+    			add_location(div2, file$4, 183, 6, 5604);
     			attr_dev(div3, "class", "question-section");
-    			toggle_class(div3, "top-shift", /*$list*/ ctx[3] && /*i*/ ctx[31] == 2 || /*i*/ ctx[31] == 2);
-    			add_location(div3, file$4, 190, 6, 5819);
+    			toggle_class(div3, "top-shift", /*$list*/ ctx[3] && /*i*/ ctx[34] == 2 || /*i*/ ctx[34] == 2);
+    			add_location(div3, file$4, 187, 6, 5787);
     			attr_dev(div4, "class", "timer");
-    			add_location(div4, file$4, 202, 10, 6597);
-    			add_location(b, file$4, 207, 12, 7050);
+    			add_location(div4, file$4, 199, 10, 6533);
+    			add_location(b, file$4, 204, 12, 6986);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$4, 206, 10, 7000);
+    			add_location(div5, file$4, 203, 10, 6936);
     			attr_dev(span, "class", "buttons");
-    			add_location(span, file$4, 201, 8, 6563);
+    			add_location(span, file$4, 198, 8, 6499);
     			attr_dev(footer, "class", "bottom-nav");
-    			add_location(footer, file$4, 200, 6, 6526);
+    			add_location(footer, file$4, 197, 6, 6462);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1844,26 +1844,26 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*$question*/ 16) && t0_value !== (t0_value = /*i*/ ctx[31] + 1 + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty[0] & /*$question*/ 16) && t3_value !== (t3_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty[0] & /*$question*/ 16) && t0_value !== (t0_value = /*i*/ ctx[34] + 1 + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*$question*/ 16) && t3_value !== (t3_value = JSON.parse(/*dataItem*/ ctx[32].content_text).question + "")) set_data_dev(t3, t3_value);
 
-    			if (dirty[0] & /*$question, currentselect, toggleattempt*/ 532) {
-    				each_value_1 = JSON.parse(/*dataItem*/ ctx[29].content_text).answers;
+    			if (dirty[0] & /*$question, localoption, toggleattempt*/ 529) {
+    				each_value_1 = JSON.parse(/*dataItem*/ ctx[32].content_text).answers;
     				validate_each_argument(each_value_1);
     				validate_each_keys(ctx, each_value_1, get_each_context_1$3, get_key);
     				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value_1, each_1_lookup, div3, destroy_block, create_each_block_1$3, null, get_each_context_1$3);
     			}
 
     			if (dirty[0] & /*$list, $question*/ 24) {
-    				toggle_class(div3, "top-shift", /*$list*/ ctx[3] && /*i*/ ctx[31] == 2 || /*i*/ ctx[31] == 2);
+    				toggle_class(div3, "top-shift", /*$list*/ ctx[3] && /*i*/ ctx[34] == 2 || /*i*/ ctx[34] == 2);
     			}
 
-    			if (!current || dirty[0] & /*minutes*/ 2) set_data_dev(t6, /*minutes*/ ctx[1]);
-    			if ((!current || dirty[0] & /*seconds*/ 1) && t8_value !== (t8_value = /*seconds*/ ctx[0].toLocaleString(undefined, { minimumIntegerDigits: 2 }) + "")) set_data_dev(t8, t8_value);
+    			if (!current || dirty[0] & /*minutes*/ 4) set_data_dev(t6, /*minutes*/ ctx[2]);
+    			if ((!current || dirty[0] & /*seconds*/ 2) && t8_value !== (t8_value = /*seconds*/ ctx[1].toLocaleString(undefined, { minimumIntegerDigits: 2 }) + "")) set_data_dev(t8, t8_value);
     			const button1_changes = {};
     			if (dirty[0] & /*$disable2*/ 64) button1_changes.disabled = /*$disable2*/ ctx[6];
     			button1.$set(button1_changes);
-    			if ((!current || dirty[0] & /*$question*/ 16) && t12_value !== (t12_value = /*i*/ ctx[31] + 1 + "")) set_data_dev(t12, t12_value);
+    			if ((!current || dirty[0] & /*$question*/ 16) && t12_value !== (t12_value = /*i*/ ctx[34] + 1 + "")) set_data_dev(t12, t12_value);
     			const button2_changes = {};
     			if (dirty[0] & /*$disable1*/ 128) button2_changes.disabled = /*$disable1*/ ctx[7];
     			button2.$set(button2_changes);
@@ -1929,32 +1929,36 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(186:4) {#if i == $currentitem}",
+    		source: "(183:4) {#if i == $currentitem}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (192:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
+    // (189:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
     function create_each_block_1$3(key_1, ctx) {
     	let label;
     	let span;
-    	let t0_value = String.fromCharCode(65 + /*index*/ ctx[34]) + "";
+    	let t0_value = String.fromCharCode(65 + /*index*/ ctx[37]) + "";
     	let t0;
     	let t1;
     	let input;
     	let input_id_value;
     	let input_is_correct_value;
     	let input_value_value;
-    	let input_checked_value;
     	let html_tag;
-    	let raw_value = /*ans*/ ctx[32].answer + "";
+    	let raw_value = /*ans*/ ctx[35].answer + "";
     	let t2;
     	let label_for_value;
     	let label_id_value;
     	let mounted;
     	let dispose;
+    	/*$$binding_groups*/ ctx[15][0][/*i*/ ctx[34]] = [];
+
+    	function input_change_handler() {
+    		/*input_change_handler*/ ctx[14].call(input, /*i*/ ctx[34]);
+    	}
 
     	const block = {
     		key: key_1,
@@ -1968,26 +1972,23 @@ var app = (function () {
     			html_tag = new HtmlTag();
     			t2 = space();
     			attr_dev(span, "class", "option-no");
-    			add_location(span, file$4, 193, 12, 6070);
+    			add_location(span, file$4, 190, 12, 6038);
     			attr_dev(input, "type", "radio");
     			attr_dev(input, "name", "ans");
-    			attr_dev(input, "id", input_id_value = "ans" + /*index*/ ctx[34]);
-    			attr_dev(input, "is_correct", input_is_correct_value = /*ans*/ ctx[32].is_correct);
-    			input.value = input_value_value = /*ans*/ ctx[32].answer;
+    			attr_dev(input, "id", input_id_value = "ans" + /*index*/ ctx[37]);
+    			attr_dev(input, "is_correct", input_is_correct_value = /*ans*/ ctx[35].is_correct);
+    			input.__value = input_value_value = /*ans*/ ctx[35].answer;
+    			input.value = input.__value;
     			attr_dev(input, "class", "input-items");
-
-    			input.checked = input_checked_value = /*currentselect*/ ctx[2].includes(/*ans*/ ctx[32].answer)
-    			? true
-    			: false;
-
     			attr_dev(input, "tabindex", "-1");
-    			add_location(input, file$4, 194, 12, 6148);
+    			/*$$binding_groups*/ ctx[15][0][/*i*/ ctx[34]].push(input);
+    			add_location(input, file$4, 191, 12, 6116);
     			html_tag.a = t2;
-    			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[34]);
-    			attr_dev(label, "id", label_id_value = "option" + /*index*/ ctx[34]);
+    			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[37]);
+    			attr_dev(label, "id", label_id_value = "option" + /*index*/ ctx[37]);
     			attr_dev(label, "class", "items");
     			attr_dev(label, "tabindex", "0");
-    			add_location(label, file$4, 192, 10, 5986);
+    			add_location(label, file$4, 189, 10, 5954);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -1996,60 +1997,64 @@ var app = (function () {
     			append_dev(span, t0);
     			append_dev(label, t1);
     			append_dev(label, input);
+    			input.checked = input.__value === /*localoption*/ ctx[0][/*i*/ ctx[34]];
     			html_tag.m(raw_value, label);
     			append_dev(label, t2);
 
     			if (!mounted) {
-    				dispose = listen_dev(
-    					input,
-    					"click",
-    					function () {
-    						if (is_function(/*toggleattempt*/ ctx[9](/*i*/ ctx[31], JSON.parse(/*dataItem*/ ctx[29].content_text).question, /*ans*/ ctx[32].answer))) /*toggleattempt*/ ctx[9](/*i*/ ctx[31], JSON.parse(/*dataItem*/ ctx[29].content_text).question, /*ans*/ ctx[32].answer).apply(this, arguments);
-    					},
-    					false,
-    					false,
-    					false
-    				);
+    				dispose = [
+    					listen_dev(
+    						input,
+    						"click",
+    						function () {
+    							if (is_function(/*toggleattempt*/ ctx[9](/*i*/ ctx[34], JSON.parse(/*dataItem*/ ctx[32].content_text).question, /*ans*/ ctx[35].answer))) /*toggleattempt*/ ctx[9](/*i*/ ctx[34], JSON.parse(/*dataItem*/ ctx[32].content_text).question, /*ans*/ ctx[35].answer).apply(this, arguments);
+    						},
+    						false,
+    						false,
+    						false
+    					),
+    					listen_dev(input, "change", input_change_handler)
+    				];
 
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$question*/ 16 && t0_value !== (t0_value = String.fromCharCode(65 + /*index*/ ctx[34]) + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*$question*/ 16 && t0_value !== (t0_value = String.fromCharCode(65 + /*index*/ ctx[37]) + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty[0] & /*$question*/ 16 && input_id_value !== (input_id_value = "ans" + /*index*/ ctx[34])) {
+    			if (dirty[0] & /*$question*/ 16 && input_id_value !== (input_id_value = "ans" + /*index*/ ctx[37])) {
     				attr_dev(input, "id", input_id_value);
     			}
 
-    			if (dirty[0] & /*$question*/ 16 && input_is_correct_value !== (input_is_correct_value = /*ans*/ ctx[32].is_correct)) {
+    			if (dirty[0] & /*$question*/ 16 && input_is_correct_value !== (input_is_correct_value = /*ans*/ ctx[35].is_correct)) {
     				attr_dev(input, "is_correct", input_is_correct_value);
     			}
 
-    			if (dirty[0] & /*$question*/ 16 && input_value_value !== (input_value_value = /*ans*/ ctx[32].answer)) {
-    				prop_dev(input, "value", input_value_value);
+    			if (dirty[0] & /*$question*/ 16 && input_value_value !== (input_value_value = /*ans*/ ctx[35].answer)) {
+    				prop_dev(input, "__value", input_value_value);
+    				input.value = input.__value;
     			}
 
-    			if (dirty[0] & /*currentselect, $question*/ 20 && input_checked_value !== (input_checked_value = /*currentselect*/ ctx[2].includes(/*ans*/ ctx[32].answer)
-    			? true
-    			: false)) {
-    				prop_dev(input, "checked", input_checked_value);
+    			if (dirty[0] & /*localoption, $question*/ 17) {
+    				input.checked = input.__value === /*localoption*/ ctx[0][/*i*/ ctx[34]];
     			}
 
-    			if (dirty[0] & /*$question*/ 16 && raw_value !== (raw_value = /*ans*/ ctx[32].answer + "")) html_tag.p(raw_value);
+    			if (dirty[0] & /*$question*/ 16 && raw_value !== (raw_value = /*ans*/ ctx[35].answer + "")) html_tag.p(raw_value);
 
-    			if (dirty[0] & /*$question*/ 16 && label_for_value !== (label_for_value = "ans" + /*index*/ ctx[34])) {
+    			if (dirty[0] & /*$question*/ 16 && label_for_value !== (label_for_value = "ans" + /*index*/ ctx[37])) {
     				attr_dev(label, "for", label_for_value);
     			}
 
-    			if (dirty[0] & /*$question*/ 16 && label_id_value !== (label_id_value = "option" + /*index*/ ctx[34])) {
+    			if (dirty[0] & /*$question*/ 16 && label_id_value !== (label_id_value = "option" + /*index*/ ctx[37])) {
     				attr_dev(label, "id", label_id_value);
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(label);
+    			/*$$binding_groups*/ ctx[15][0][/*i*/ ctx[34]].splice(/*$$binding_groups*/ ctx[15][0][/*i*/ ctx[34]].indexOf(input), 1);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -2057,14 +2062,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(192:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}",
+    		source: "(189:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (215:8) {#if $isopen}
+    // (212:8) {#if $isopen}
     function create_if_block_1$4(ctx) {
     	let endtestmodal;
     	let current;
@@ -2096,19 +2101,19 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(215:8) {#if $isopen}",
+    		source: "(212:8) {#if $isopen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (185:2) {#each $question as dataItem, i (dataItem)}
+    // (182:2) {#each $question as dataItem, i (dataItem)}
     function create_each_block$3(key_1, ctx) {
     	let first;
     	let if_block_anchor;
     	let current;
-    	let if_block = /*i*/ ctx[31] == /*$currentitem*/ ctx[5] && create_if_block$4(ctx);
+    	let if_block = /*i*/ ctx[34] == /*$currentitem*/ ctx[5] && create_if_block$4(ctx);
 
     	const block = {
     		key: key_1,
@@ -2128,7 +2133,7 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (/*i*/ ctx[31] == /*$currentitem*/ ctx[5]) {
+    			if (/*i*/ ctx[34] == /*$currentitem*/ ctx[5]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -2171,7 +2176,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(185:2) {#each $question as dataItem, i (dataItem)}",
+    		source: "(182:2) {#each $question as dataItem, i (dataItem)}",
     		ctx
     	});
 
@@ -2187,7 +2192,7 @@ var app = (function () {
     	let current;
     	let each_value = /*$question*/ ctx[4];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*dataItem*/ ctx[29];
+    	const get_key = ctx => /*dataItem*/ ctx[32];
     	validate_each_keys(ctx, each_value, get_each_context$3, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -2208,10 +2213,10 @@ var app = (function () {
 
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "style.css");
-    			add_location(link, file$4, 182, 0, 5463);
+    			add_location(link, file$4, 179, 0, 5431);
     			attr_dev(section, "class", "section");
     			toggle_class(section, "shift", /*$list*/ ctx[3]);
-    			add_location(section, file$4, 183, 0, 5507);
+    			add_location(section, file$4, 180, 0, 5475);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2228,7 +2233,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*$isopen, end, $disable1, next, $question, $disable2, prev, lis, seconds, minutes, $list, currentselect, toggleattempt, $currentitem*/ 16383) {
+    			if (dirty[0] & /*$isopen, end, $disable1, next, $question, $disable2, prev, lis, seconds, minutes, $list, localoption, toggleattempt, $currentitem*/ 16383) {
     				each_value = /*$question*/ ctx[4];
     				validate_each_argument(each_value);
     				group_outros();
@@ -2289,9 +2294,9 @@ var app = (function () {
     	let $disable1;
     	let $isopen;
     	validate_store(counter, 'counter');
-    	component_subscribe($$self, counter, $$value => $$invalidate(18, $counter = $$value));
+    	component_subscribe($$self, counter, $$value => $$invalidate(21, $counter = $$value));
     	validate_store(correctans, 'correctans');
-    	component_subscribe($$self, correctans, $$value => $$invalidate(19, $correctans = $$value));
+    	component_subscribe($$self, correctans, $$value => $$invalidate(22, $correctans = $$value));
     	validate_store(list, 'list');
     	component_subscribe($$self, list, $$value => $$invalidate(3, $list = $$value));
     	validate_store(question, 'question');
@@ -2307,6 +2312,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Footer', slots, []);
     	let dispatch = createEventDispatcher();
+    	let localoption = [];
     	var count = 0;
     	let seconds = 12;
     	var secs = 0;
@@ -2325,20 +2331,16 @@ var app = (function () {
     	function toggleattempt(l, z, event) {
     		Selected.push(event);
 
-    		for (let i = 0; i < correct.length; i++) {
-    			JSON.parse(correct[i].content_text).question;
-    		}
-
     		selectedanswer.update(its => {
-    			return [...Selected];
+    			return [...localoption];
     		});
 
     		selectedanswer.subscribe(items => {
-    			let t = items.filter((c, index) => {
+    			let Remove_Duplicate = items.filter((c, index) => {
     				return items.indexOf(c) === index;
     			});
 
-    			$$invalidate(2, currentselect = [...t]);
+    			currentselect = [...Remove_Duplicate];
     		});
 
     		//==========================================TO CHECK CURRENT ANSWER IS RIGHT OR NOT==========================
@@ -2368,11 +2370,11 @@ var app = (function () {
     	}
 
     	attempted.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Remove_Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		count = t.length;
+    		count = Remove_Duplicate.length;
     	});
 
     	//===========================CORRECT ANSWERS OF ALL QUESTIONS LOGIC=============================================
@@ -2417,15 +2419,15 @@ var app = (function () {
 
     	var timer = setInterval(
     		() => {
-    			$$invalidate(0, seconds--, seconds);
+    			$$invalidate(1, seconds--, seconds);
     			secs += 1;
     			timetaken.set(secs);
 
     			if (minutes > 0 && seconds == 0) {
-    				$$invalidate(1, minutes--, minutes);
-    				$$invalidate(0, seconds = 59);
+    				$$invalidate(2, minutes--, minutes);
+    				$$invalidate(1, seconds = 59);
     			} else if (minutes == 0) {
-    				$$invalidate(1, minutes = 0);
+    				$$invalidate(2, minutes = 0);
     			} else if (minutes == 0 && seconds == 0) {
     				stop();
     				window.alert("TIME IS UP");
@@ -2477,6 +2479,13 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Footer> was created with unknown prop '${key}'`);
     	});
 
+    	const $$binding_groups = [[]];
+
+    	function input_change_handler(i) {
+    		localoption[i] = this.__value;
+    		$$invalidate(0, localoption);
+    	}
+
     	function click_handler(event) {
     		bubble.call(this, $$self, event);
     	}
@@ -2500,6 +2509,7 @@ var app = (function () {
     		isopen,
     		timetaken,
     		dispatch,
+    		localoption,
     		count,
     		seconds,
     		secs,
@@ -2531,10 +2541,11 @@ var app = (function () {
 
     	$$self.$inject_state = $$props => {
     		if ('dispatch' in $$props) dispatch = $$props.dispatch;
+    		if ('localoption' in $$props) $$invalidate(0, localoption = $$props.localoption);
     		if ('count' in $$props) count = $$props.count;
-    		if ('seconds' in $$props) $$invalidate(0, seconds = $$props.seconds);
+    		if ('seconds' in $$props) $$invalidate(1, seconds = $$props.seconds);
     		if ('secs' in $$props) secs = $$props.secs;
-    		if ('minutes' in $$props) $$invalidate(1, minutes = $$props.minutes);
+    		if ('minutes' in $$props) $$invalidate(2, minutes = $$props.minutes);
     		if ('timer' in $$props) timer = $$props.timer;
     		if ('correct' in $$props) correct = $$props.correct;
     		if ('questions' in $$props) questions = $$props.questions;
@@ -2543,7 +2554,7 @@ var app = (function () {
     		if ('questioncorrect' in $$props) questioncorrect = $$props.questioncorrect;
     		if ('iscorrect' in $$props) iscorrect = $$props.iscorrect;
     		if ('Selected' in $$props) Selected = $$props.Selected;
-    		if ('currentselect' in $$props) $$invalidate(2, currentselect = $$props.currentselect);
+    		if ('currentselect' in $$props) currentselect = $$props.currentselect;
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -2551,9 +2562,9 @@ var app = (function () {
     	}
 
     	return [
+    		localoption,
     		seconds,
     		minutes,
-    		currentselect,
     		$list,
     		$question,
     		$currentitem,
@@ -2565,6 +2576,8 @@ var app = (function () {
     		prev,
     		end,
     		lis,
+    		input_change_handler,
+    		$$binding_groups,
     		click_handler
     	];
     }
@@ -2588,22 +2601,22 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[13] = list[i];
-    	child_ctx[15] = i;
+    	child_ctx[14] = list[i];
+    	child_ctx[16] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
-    	child_ctx[18] = i;
+    	child_ctx[17] = list[i];
+    	child_ctx[19] = i;
     	return child_ctx;
     }
 
     function get_each_context_2$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[19] = list[i];
-    	child_ctx[18] = i;
+    	child_ctx[20] = list[i];
+    	child_ctx[19] = i;
     	return child_ctx;
     }
 
@@ -2611,12 +2624,12 @@ var app = (function () {
     function create_if_block_1$3(ctx) {
     	let div2;
     	let div0;
-    	let t0_value = /*i*/ ctx[15] + 1 + "";
+    	let t0_value = /*i*/ ctx[16] + 1 + "";
     	let t0;
     	let t1;
     	let t2;
     	let div1;
-    	let t3_value = JSON.parse(/*dataItem*/ ctx[13].content_text).question + "";
+    	let t3_value = JSON.parse(/*dataItem*/ ctx[14].content_text).question + "";
     	let t3;
     	let t4;
     	let div3;
@@ -2630,7 +2643,7 @@ var app = (function () {
     	let t7;
     	let div5;
     	let b;
-    	let t8_value = /*i*/ ctx[15] + 1 + "";
+    	let t8_value = /*i*/ ctx[16] + 1 + "";
     	let t8;
     	let t9;
     	let t10;
@@ -2639,9 +2652,9 @@ var app = (function () {
     	let button2;
     	let t12;
     	let current;
-    	let each_value_2 = JSON.parse(/*dataItem*/ ctx[13].content_text).answers;
+    	let each_value_2 = JSON.parse(/*dataItem*/ ctx[14].content_text).answers;
     	validate_each_argument(each_value_2);
-    	const get_key = ctx => /*ans*/ ctx[19];
+    	const get_key = ctx => /*ans*/ ctx[20];
     	validate_each_keys(ctx, each_value_2, get_each_context_2$1, get_key);
 
     	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -2650,7 +2663,7 @@ var app = (function () {
     		each_1_lookup.set(key, each_blocks[i] = create_each_block_2$1(key, child_ctx));
     	}
 
-    	let if_block = /*explain*/ ctx[7] && create_if_block_2$3(ctx);
+    	let if_block = /*explain*/ ctx[8] && create_if_block_2$3(ctx);
 
     	button0 = new Button({
     			props: {
@@ -2660,12 +2673,12 @@ var app = (function () {
     				id: "prev",
     				name: "Prev-btn",
     				caption: "Previous",
-    				disabled: /*$disable2*/ ctx[5]
+    				disabled: /*$disable2*/ ctx[6]
     			},
     			$$inline: true
     		});
 
-    	button0.$on("click", /*prev*/ ctx[9]);
+    	button0.$on("click", /*prev*/ ctx[10]);
 
     	button1 = new Button({
     			props: {
@@ -2675,12 +2688,12 @@ var app = (function () {
     				id: "next",
     				name: "Next-btn",
     				caption: "Next",
-    				disabled: /*$disable1*/ ctx[6]
+    				disabled: /*$disable1*/ ctx[7]
     			},
     			$$inline: true
     		});
 
-    	button1.$on("click", /*next*/ ctx[8]);
+    	button1.$on("click", /*next*/ ctx[9]);
 
     	button2 = new Button({
     			props: {
@@ -2694,7 +2707,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button2.$on("click", /*dash*/ ctx[10]);
+    	button2.$on("click", /*dash*/ ctx[11]);
 
     	const block = {
     		c: function create() {
@@ -2736,17 +2749,17 @@ var app = (function () {
     			attr_dev(div2, "class", "review-question");
     			add_location(div2, file$3, 91, 8, 2120);
     			attr_dev(div3, "class", "review-question-section");
-    			toggle_class(div3, "top-shift", /*i*/ ctx[15] == 2);
+    			toggle_class(div3, "top-shift", /*i*/ ctx[16] == 2);
     			add_location(div3, file$3, 95, 8, 2313);
     			attr_dev(div4, "class", "explanation");
     			attr_dev(div4, "tabindex", "0");
-    			add_location(div4, file$3, 106, 8, 3177);
-    			add_location(b, file$3, 119, 12, 3741);
+    			add_location(div4, file$3, 106, 8, 3173);
+    			add_location(b, file$3, 119, 12, 3737);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$3, 118, 10, 3691);
+    			add_location(div5, file$3, 118, 10, 3687);
     			attr_dev(div6, "class", "bottom-nav");
-    			add_location(div6, file$3, 115, 8, 3490);
+    			add_location(div6, file$3, 115, 8, 3486);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -2782,27 +2795,27 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*$question*/ 4) && t0_value !== (t0_value = /*i*/ ctx[15] + 1 + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*$question*/ 4) && t3_value !== (t3_value = JSON.parse(/*dataItem*/ ctx[13].content_text).question + "")) set_data_dev(t3, t3_value);
+    			if ((!current || dirty & /*$question*/ 4) && t0_value !== (t0_value = /*i*/ ctx[16] + 1 + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*$question*/ 4) && t3_value !== (t3_value = JSON.parse(/*dataItem*/ ctx[14].content_text).question + "")) set_data_dev(t3, t3_value);
 
-    			if (dirty & /*JSON, $question, currentselect, String*/ 12) {
-    				each_value_2 = JSON.parse(/*dataItem*/ ctx[13].content_text).answers;
+    			if (dirty & /*JSON, $question, currentselect, $selectedanswer, String*/ 44) {
+    				each_value_2 = JSON.parse(/*dataItem*/ ctx[14].content_text).answers;
     				validate_each_argument(each_value_2);
     				validate_each_keys(ctx, each_value_2, get_each_context_2$1, get_key);
     				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value_2, each_1_lookup, div3, destroy_block, create_each_block_2$1, null, get_each_context_2$1);
     			}
 
     			if (dirty & /*$question*/ 4) {
-    				toggle_class(div3, "top-shift", /*i*/ ctx[15] == 2);
+    				toggle_class(div3, "top-shift", /*i*/ ctx[16] == 2);
     			}
 
-    			if (/*explain*/ ctx[7]) if_block.p(ctx, dirty);
+    			if (/*explain*/ ctx[8]) if_block.p(ctx, dirty);
     			const button0_changes = {};
-    			if (dirty & /*$disable2*/ 32) button0_changes.disabled = /*$disable2*/ ctx[5];
+    			if (dirty & /*$disable2*/ 64) button0_changes.disabled = /*$disable2*/ ctx[6];
     			button0.$set(button0_changes);
-    			if ((!current || dirty & /*$question*/ 4) && t8_value !== (t8_value = /*i*/ ctx[15] + 1 + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty & /*$question*/ 4) && t8_value !== (t8_value = /*i*/ ctx[16] + 1 + "")) set_data_dev(t8, t8_value);
     			const button1_changes = {};
-    			if (dirty & /*$disable1*/ 64) button1_changes.disabled = /*$disable1*/ ctx[6];
+    			if (dirty & /*$disable1*/ 128) button1_changes.disabled = /*$disable1*/ ctx[7];
     			button1.$set(button1_changes);
     		},
     		i: function intro(local) {
@@ -2852,7 +2865,7 @@ var app = (function () {
     // (97:10) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
     function create_each_block_2$1(key_1, ctx) {
     	let label;
-    	let t0_value = String.fromCharCode(65 + /*index*/ ctx[18]) + "";
+    	let t0_value = String.fromCharCode(65 + /*index*/ ctx[19]) + "";
     	let t0;
     	let t1;
     	let input;
@@ -2863,7 +2876,7 @@ var app = (function () {
     	let t2;
     	let div;
     	let html_tag;
-    	let raw_value = /*ans*/ ctx[19].answer + "";
+    	let raw_value = /*ans*/ ctx[20].answer + "";
     	let t3;
     	let label_for_value;
     	let label_id_value;
@@ -2883,26 +2896,26 @@ var app = (function () {
     			attr_dev(input, "class", "radio_input");
     			attr_dev(input, "type", "radio");
     			attr_dev(input, "name", "ans");
-    			attr_dev(input, "id", input_id_value = "ans" + /*index*/ ctx[18]);
-    			attr_dev(input, "is_correct", input_is_correct_value = /*ans*/ ctx[19].is_correct);
-    			input.value = input_value_value = /*ans*/ ctx[19].answer;
+    			attr_dev(input, "id", input_id_value = "ans" + /*index*/ ctx[19]);
+    			attr_dev(input, "is_correct", input_is_correct_value = /*ans*/ ctx[20].is_correct);
+    			input.value = input_value_value = /*ans*/ ctx[20].answer;
 
-    			input.checked = input_checked_value = /*ans*/ ctx[19].answer && /*ans*/ ctx[19].is_correct == 1
+    			input.checked = input_checked_value = /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 1
     			? true
     			: false;
 
     			input.disabled = "disabled";
     			add_location(input, file$3, 99, 14, 2712);
-    			toggle_class(div, "radio_radio", /*ans*/ ctx[19].is_correct == 1 || /*ans*/ ctx[19].answer);
-    			toggle_class(div, "wrong", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[19].answer) && /*ans*/ ctx[19].is_correct == 0);
+    			toggle_class(div, "radio_radio", /*ans*/ ctx[20].is_correct == 1 || /*ans*/ ctx[20].answer);
+    			toggle_class(div, "wrong", /*$selectedanswer*/ ctx[5][/*i*/ ctx[16]] == /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 0);
     			add_location(div, file$3, 101, 16, 2941);
     			html_tag.a = t3;
     			attr_dev(label, "tabindex", "0");
-    			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[18]);
-    			attr_dev(label, "id", label_id_value = "option" + /*index*/ ctx[18]);
+    			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[19]);
+    			attr_dev(label, "id", label_id_value = "option" + /*index*/ ctx[19]);
     			attr_dev(label, "class", "radio");
-    			toggle_class(label, "bold", /*ans*/ ctx[19].is_correct == 1);
-    			toggle_class(label, "not-bold", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[19].answer) && /*ans*/ ctx[19].is_correct == 0);
+    			toggle_class(label, "bold", /*ans*/ ctx[20].is_correct == 1);
+    			toggle_class(label, "not-bold", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[20].answer) && /*ans*/ ctx[20].is_correct == 0);
     			add_location(label, file$3, 97, 12, 2470);
     			this.first = label;
     		},
@@ -2918,50 +2931,50 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*$question*/ 4 && t0_value !== (t0_value = String.fromCharCode(65 + /*index*/ ctx[18]) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$question*/ 4 && t0_value !== (t0_value = String.fromCharCode(65 + /*index*/ ctx[19]) + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*$question*/ 4 && input_id_value !== (input_id_value = "ans" + /*index*/ ctx[18])) {
+    			if (dirty & /*$question*/ 4 && input_id_value !== (input_id_value = "ans" + /*index*/ ctx[19])) {
     				attr_dev(input, "id", input_id_value);
     			}
 
-    			if (dirty & /*$question*/ 4 && input_is_correct_value !== (input_is_correct_value = /*ans*/ ctx[19].is_correct)) {
+    			if (dirty & /*$question*/ 4 && input_is_correct_value !== (input_is_correct_value = /*ans*/ ctx[20].is_correct)) {
     				attr_dev(input, "is_correct", input_is_correct_value);
     			}
 
-    			if (dirty & /*$question*/ 4 && input_value_value !== (input_value_value = /*ans*/ ctx[19].answer)) {
+    			if (dirty & /*$question*/ 4 && input_value_value !== (input_value_value = /*ans*/ ctx[20].answer)) {
     				prop_dev(input, "value", input_value_value);
     			}
 
-    			if (dirty & /*$question*/ 4 && input_checked_value !== (input_checked_value = /*ans*/ ctx[19].answer && /*ans*/ ctx[19].is_correct == 1
+    			if (dirty & /*$question*/ 4 && input_checked_value !== (input_checked_value = /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 1
     			? true
     			: false)) {
     				prop_dev(input, "checked", input_checked_value);
     			}
 
     			if (dirty & /*JSON, $question*/ 4) {
-    				toggle_class(div, "radio_radio", /*ans*/ ctx[19].is_correct == 1 || /*ans*/ ctx[19].answer);
+    				toggle_class(div, "radio_radio", /*ans*/ ctx[20].is_correct == 1 || /*ans*/ ctx[20].answer);
     			}
 
-    			if (dirty & /*currentselect, JSON, $question*/ 12) {
-    				toggle_class(div, "wrong", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[19].answer) && /*ans*/ ctx[19].is_correct == 0);
+    			if (dirty & /*$selectedanswer, $question, JSON*/ 36) {
+    				toggle_class(div, "wrong", /*$selectedanswer*/ ctx[5][/*i*/ ctx[16]] == /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 0);
     			}
 
-    			if (dirty & /*$question*/ 4 && raw_value !== (raw_value = /*ans*/ ctx[19].answer + "")) html_tag.p(raw_value);
+    			if (dirty & /*$question*/ 4 && raw_value !== (raw_value = /*ans*/ ctx[20].answer + "")) html_tag.p(raw_value);
 
-    			if (dirty & /*$question*/ 4 && label_for_value !== (label_for_value = "ans" + /*index*/ ctx[18])) {
+    			if (dirty & /*$question*/ 4 && label_for_value !== (label_for_value = "ans" + /*index*/ ctx[19])) {
     				attr_dev(label, "for", label_for_value);
     			}
 
-    			if (dirty & /*$question*/ 4 && label_id_value !== (label_id_value = "option" + /*index*/ ctx[18])) {
+    			if (dirty & /*$question*/ 4 && label_id_value !== (label_id_value = "option" + /*index*/ ctx[19])) {
     				attr_dev(label, "id", label_id_value);
     			}
 
     			if (dirty & /*JSON, $question*/ 4) {
-    				toggle_class(label, "bold", /*ans*/ ctx[19].is_correct == 1);
+    				toggle_class(label, "bold", /*ans*/ ctx[20].is_correct == 1);
     			}
 
     			if (dirty & /*currentselect, JSON, $question*/ 12) {
-    				toggle_class(label, "not-bold", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[19].answer) && /*ans*/ ctx[19].is_correct == 0);
+    				toggle_class(label, "not-bold", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[20].answer) && /*ans*/ ctx[20].is_correct == 0);
     			}
     		},
     		d: function destroy(detaching) {
@@ -2985,9 +2998,9 @@ var app = (function () {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
     	let each_1_anchor;
-    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[13].content_text).answers;
+    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[14].content_text).answers;
     	validate_each_argument(each_value_1);
-    	const get_key = ctx => /*answers*/ ctx[16];
+    	const get_key = ctx => /*answers*/ ctx[17];
     	validate_each_keys(ctx, each_value_1, get_each_context_1$2, get_key);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -3013,7 +3026,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*rel, JSON, $question*/ 5) {
-    				each_value_1 = JSON.parse(/*dataItem*/ ctx[13].content_text).answers;
+    				each_value_1 = JSON.parse(/*dataItem*/ ctx[14].content_text).answers;
     				validate_each_argument(each_value_1);
     				validate_each_keys(ctx, each_value_1, get_each_context_1$2, get_key);
     				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value_1, each_1_lookup, each_1_anchor.parentNode, destroy_block, create_each_block_1$2, each_1_anchor, get_each_context_1$2);
@@ -3078,7 +3091,7 @@ var app = (function () {
     function create_each_block_1$2(key_1, ctx) {
     	let first;
     	let if_block_anchor;
-    	let if_block = /*answers*/ ctx[16].is_correct == 1 && create_if_block_3$3(ctx);
+    	let if_block = /*answers*/ ctx[17].is_correct == 1 && create_if_block_3$3(ctx);
 
     	const block = {
     		key: key_1,
@@ -3097,7 +3110,7 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (/*answers*/ ctx[16].is_correct == 1) {
+    			if (/*answers*/ ctx[17].is_correct == 1) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -3133,7 +3146,7 @@ var app = (function () {
     	let first;
     	let if_block_anchor;
     	let current;
-    	let if_block = /*i*/ ctx[15] == /*$current*/ ctx[1] && create_if_block_1$3(ctx);
+    	let if_block = /*i*/ ctx[16] == /*$current*/ ctx[1] && create_if_block_1$3(ctx);
 
     	const block = {
     		key: key_1,
@@ -3153,7 +3166,7 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (/*i*/ ctx[15] == /*$current*/ ctx[1]) {
+    			if (/*i*/ ctx[16] == /*$current*/ ctx[1]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -3262,7 +3275,7 @@ var app = (function () {
 
     	let each_value = /*$question*/ ctx[2];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*dataItem*/ ctx[13];
+    	const get_key = ctx => /*dataItem*/ ctx[14];
     	validate_each_keys(ctx, each_value, get_each_context$2, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -3319,7 +3332,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*dash, $disable1, next, $question, $disable2, prev, JSON, rel, explain, currentselect, String, $current*/ 2031) {
+    			if (dirty & /*dash, $disable1, next, $question, $disable2, prev, JSON, rel, explain, currentselect, $selectedanswer, String, $current*/ 4079) {
     				each_value = /*$question*/ ctx[2];
     				validate_each_argument(each_value);
     				group_outros();
@@ -3400,16 +3413,19 @@ var app = (function () {
     function instance$3($$self, $$props, $$invalidate) {
     	let $current;
     	let $question;
+    	let $selectedanswer;
     	let $disable2;
     	let $disable1;
     	validate_store(current, 'current');
     	component_subscribe($$self, current, $$value => $$invalidate(1, $current = $$value));
     	validate_store(question, 'question');
     	component_subscribe($$self, question, $$value => $$invalidate(2, $question = $$value));
+    	validate_store(selectedanswer, 'selectedanswer');
+    	component_subscribe($$self, selectedanswer, $$value => $$invalidate(5, $selectedanswer = $$value));
     	validate_store(disable2, 'disable2');
-    	component_subscribe($$self, disable2, $$value => $$invalidate(5, $disable2 = $$value));
+    	component_subscribe($$self, disable2, $$value => $$invalidate(6, $disable2 = $$value));
     	validate_store(disable1, 'disable1');
-    	component_subscribe($$self, disable1, $$value => $$invalidate(6, $disable1 = $$value));
+    	component_subscribe($$self, disable1, $$value => $$invalidate(7, $disable1 = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Review', slots, []);
     	var explain = true;
@@ -3497,12 +3513,13 @@ var app = (function () {
     		dash,
     		$current,
     		$question,
+    		$selectedanswer,
     		$disable2,
     		$disable1
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('explain' in $$props) $$invalidate(7, explain = $$props.explain);
+    		if ('explain' in $$props) $$invalidate(8, explain = $$props.explain);
     		if ('currentselect' in $$props) $$invalidate(3, currentselect = $$props.currentselect);
     		if ('home' in $$props) $$invalidate(4, home = $$props.home);
     		if ('Heading' in $$props) Heading = $$props.Heading;
@@ -3536,6 +3553,7 @@ var app = (function () {
     		$question,
     		currentselect,
     		home,
+    		$selectedanswer,
     		$disable2,
     		$disable1,
     		explain,

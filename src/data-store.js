@@ -27,7 +27,6 @@ async function fetchUserData(data, set) {
     .then((response) => response.json())
     .then((data) => {
       question.set(data);
-      //console.log(question);
     });
 }
 
