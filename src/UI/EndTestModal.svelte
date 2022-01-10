@@ -24,21 +24,21 @@
   });
 
   attempted.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
-    Raw_Attempt = [...Raw_Attempt, ...t];
-    count = t.length;
+    Raw_Attempt = [...Raw_Attempt, ...Duplicate];
+    count = Duplicate.length;
   });
 
-  for (let i of Raw_Attempt) {
-    let p = Ques_Str.indexOf(i);
-    delete Ques_Str[p];
+  for (let elements of Raw_Attempt) {
+    let question_element = Ques_Str.indexOf(elements);
+    delete Ques_Str[question_element];
   }
 
-  for (let b of Ques_Str) {
-    if (b != undefined) {
-      Raw_Unattempted.push(b);
+  for (let elements of Ques_Str) {
+    if (elements != undefined) {
+      Raw_Unattempted.push(elements);
     }
   }
 
@@ -47,10 +47,10 @@
   });
 
   currentcorrect.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
-    Current_Correct = [...Current_Correct, ...t];
+    Current_Correct = [...Current_Correct, ...Duplicate];
   });
 
   $: final_attempt = count;

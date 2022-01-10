@@ -42,70 +42,70 @@
   }
 
   attempted.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
 
-    dummyarray = [...t];
-    count = t.length;
+    dummyarray = [...Duplicate];
+    count = Duplicate.length;
   });
 
   unattempted.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
 
-    Raw_Unattempted = t.length;
+    Raw_Unattempted = Duplicate.length;
   });
 
   currentcorrect.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
 
-    Current_Correct = [...t];
-    correctlength = t.length;
+    Current_Correct = [...Duplicate];
+    correctlength = Duplicate.length;
   });
 
   $: correctlength = correctlength;
 
   $: result = Math.round((correctlength / 11) * 100);
 
-  function r(x) {
+  function goReview(jump) {
     review = true;
     $: current.update((its) => {
-      return x;
+      return jump;
     });
 
-    if (x == 0) {
+    if (jump == 0) {
       $disable2 = true;
     }
 
-    if (x > 0) {
+    if (jump > 0) {
       $disable1.set(false);
     }
   }
 
   selectedanswer.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
-    currentselect = [...t];
+    currentselect = [...Duplicate];
   });
 
   allincorrect.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
 
-    incorrect = [...t];
+    incorrect = [...Duplicate];
   });
 
   correctques.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
-    questioncorrect = [...t];
+    questioncorrect = [...Duplicate];
   });
 </script>
 
@@ -157,7 +157,7 @@
         JSON.parse(dataItem.content_text).question) || !dummyarray.includes(JSON.parse(dataItem.content_text).question) ||
         !dummyarray.includes(JSON.parse(dataItem.content_text).question))} class:un={showunattempt && dummyarray.includes(JSON.parse(dataItem.content_text).question)}>
         <td class="center" tabindex="0">{i + 1}</td>
-        <td id="questions" tabindex="0" on:click={r(i)}>{JSON.parse(dataItem.content_text).question}</td>
+        <td id="questions" tabindex="0" on:click={goReview(i)}>{JSON.parse(dataItem.content_text).question}</td>
         <td>
           <div class="center">
             {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}

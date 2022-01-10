@@ -34,7 +34,7 @@
   var currentselect = [];
 
   //=========================================MAIN LOGIC FUNCTION================================================
-  function toggleattempt(l,z, event) {
+  function toggleattempt(index,question_item, event) {
     Selected.push(event);
     selectedanswer.update((its) => {
       return [...localoption];
@@ -50,7 +50,7 @@
     //==========================================TO CHECK CURRENT ANSWER IS RIGHT OR NOT==========================
     if ($correctans.includes(event)) {
       iscorrect.push(event);
-      questioncorrect.push(z);
+      questioncorrect.push(question_item);
 
       correctques.update((items) => {
         return [...questioncorrect];
@@ -61,7 +61,7 @@
       });
       currentcorrect.subscribe((item) => {});
     }
-    Main_Array.push(z);
+    Main_Array.push(question_item);
     //==================ATTEMPTED LOGIC==================================
     attempted.update((its) => {
       return [...Main_Array];
@@ -82,8 +82,8 @@
   });
 
   for (let i = 0; i < correct.length; i++) {
-    let x = JSON.parse(correct[i].content_text).question;
-    questions.push(x);
+    let ques_ans = JSON.parse(correct[i].content_text).question;
+    questions.push(ques_ans);
 
     if (JSON.parse(correct[i].content_text).answers[0].is_correct == 1) {
       correctall.push(JSON.parse(correct[i].content_text).answers[0].answer);
@@ -160,7 +160,6 @@
       disable1.set(false);
       disable2.set(true);
     }
-
     dispatch("p");
   }
   //===============================================================================================================
@@ -198,15 +197,15 @@
       <footer class="bottom-nav">
         <span class="buttons">
           <div class="timer">{minutes}:{seconds.toLocaleString(undefined, {minimumIntegerDigits: 2,})}</div>
-          <Button style="button" margin="btn-bottom" type="button" id="list" name="List-btn" caption="List" on:click={lis} />
-          <Button style="button" margin="btn-bottom" type="button" id="prev" name="Prev-btn" caption="Previous" disabled={$disable2}
+          <Button style="button" margin="btn-bottom" type="button" id="List" name="List" caption="List" on:click={lis} />
+          <Button style="button" margin="btn-bottom" type="button" id="Prev" name="Prev" caption="Previous" disabled={$disable2}
             on:click={prev} />
           <div class="numbering" tabindex="0">
             <b>{i + 1} of 11</b>
           </div>
-          <Button style="button" margin="btn-bottom" type="button" id="next" name="Next-btn" caption="Next" disabled={$disable1}
+          <Button style="button" margin="btn-bottom" type="button" id="Next" name="Next" caption="Next" disabled={$disable1}
             on:click={next} />
-          <Button style="button" margin="btn-bottom" type="button" id="end" name="End-btn" caption="End Test" on:click on:click={end}
+          <Button style="button" margin="btn-bottom" type="button" id="End" name="End" caption="End Test" on:click on:click={end}
             />
         </span>
         {#if $isopen}

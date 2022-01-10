@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35732/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -1282,9 +1282,9 @@ var app = (function () {
     			div1 = element("div");
     			create_component(button1.$$.fragment);
     			attr_dev(div0, "class", "btn-primary");
-    			add_location(div0, file$5, 76, 6, 2058);
+    			add_location(div0, file$5, 76, 6, 2163);
     			attr_dev(div1, "class", "btn-primary");
-    			add_location(div1, file$5, 79, 6, 2215);
+    			add_location(div1, file$5, 79, 6, 2320);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -1372,22 +1372,22 @@ var app = (function () {
     			if (footer_slot_or_fallback) footer_slot_or_fallback.c();
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "style.css");
-    			add_location(link, file$5, 68, 0, 1649);
+    			add_location(link, file$5, 68, 0, 1754);
     			attr_dev(div0, "class", "modal-backdrop pos-fixed");
-    			add_location(div0, file$5, 69, 0, 1693);
+    			add_location(div0, file$5, 69, 0, 1798);
     			attr_dev(h20, "class", "heading");
     			attr_dev(h20, "tabindex", "0");
-    			add_location(h20, file$5, 71, 2, 1790);
+    			add_location(h20, file$5, 71, 2, 1895);
     			attr_dev(h21, "class", "heading");
     			attr_dev(h21, "tabindex", "0");
-    			add_location(h21, file$5, 72, 2, 1857);
+    			add_location(h21, file$5, 72, 2, 1962);
     			attr_dev(h22, "class", "heading");
     			attr_dev(h22, "tabindex", "0");
-    			add_location(h22, file$5, 73, 2, 1928);
+    			add_location(h22, file$5, 73, 2, 2033);
     			attr_dev(div1, "class", "footer pos-fixed");
-    			add_location(div1, file$5, 74, 2, 1994);
+    			add_location(div1, file$5, 74, 2, 2099);
     			attr_dev(div2, "class", "modal pos-fixed");
-    			add_location(div2, file$5, 70, 0, 1757);
+    			add_location(div2, file$5, 70, 0, 1862);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1494,22 +1494,22 @@ var app = (function () {
     	});
 
     	attempted.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		Raw_Attempt = [...Raw_Attempt, ...t];
-    		$$invalidate(4, count = t.length);
+    		Raw_Attempt = [...Raw_Attempt, ...Duplicate];
+    		$$invalidate(4, count = Duplicate.length);
     	});
 
-    	for (let i of Raw_Attempt) {
-    		let p = Ques_Str.indexOf(i);
-    		delete Ques_Str[p];
+    	for (let elements of Raw_Attempt) {
+    		let question_element = Ques_Str.indexOf(elements);
+    		delete Ques_Str[question_element];
     	}
 
-    	for (let b of Ques_Str) {
-    		if (b != undefined) {
-    			Raw_Unattempted.push(b);
+    	for (let elements of Ques_Str) {
+    		if (elements != undefined) {
+    			Raw_Unattempted.push(elements);
     		}
     	}
 
@@ -1518,11 +1518,11 @@ var app = (function () {
     	});
 
     	currentcorrect.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		Current_Correct = [...Current_Correct, ...t];
+    		Current_Correct = [...Current_Correct, ...Duplicate];
     	});
 
     	function closeModal() {
@@ -1632,7 +1632,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (183:4) {#if i == $currentitem}
+    // (182:4) {#if i == $currentitem}
     function create_if_block$4(ctx) {
     	let div2;
     	let div0;
@@ -1688,8 +1688,8 @@ var app = (function () {
     				style: "button",
     				margin: "btn-bottom",
     				type: "button",
-    				id: "list",
-    				name: "List-btn",
+    				id: "List",
+    				name: "List",
     				caption: "List"
     			},
     			$$inline: true
@@ -1702,8 +1702,8 @@ var app = (function () {
     				style: "button",
     				margin: "btn-bottom",
     				type: "button",
-    				id: "prev",
-    				name: "Prev-btn",
+    				id: "Prev",
+    				name: "Prev",
     				caption: "Previous",
     				disabled: /*$disable2*/ ctx[6]
     			},
@@ -1717,8 +1717,8 @@ var app = (function () {
     				style: "button",
     				margin: "btn-bottom",
     				type: "button",
-    				id: "next",
-    				name: "Next-btn",
+    				id: "Next",
+    				name: "Next",
     				caption: "Next",
     				disabled: /*$disable1*/ ctx[7]
     			},
@@ -1732,8 +1732,8 @@ var app = (function () {
     				style: "button",
     				margin: "btn-bottom",
     				type: "button",
-    				id: "end",
-    				name: "End-btn",
+    				id: "End",
+    				name: "End",
     				caption: "End Test"
     			},
     			$$inline: true
@@ -1783,25 +1783,25 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t17 = space();
     			attr_dev(div0, "class", "number");
-    			add_location(div0, file$4, 184, 8, 5654);
+    			add_location(div0, file$4, 183, 8, 5706);
     			attr_dev(div1, "class", "box");
-    			add_location(div1, file$4, 185, 8, 5698);
+    			add_location(div1, file$4, 184, 8, 5750);
     			attr_dev(div2, "class", "main-question");
     			attr_dev(div2, "tabindex", "0");
-    			add_location(div2, file$4, 183, 6, 5604);
+    			add_location(div2, file$4, 182, 6, 5656);
     			attr_dev(div3, "class", "question-section");
     			toggle_class(div3, "top-shift", /*$list*/ ctx[3] && /*i*/ ctx[34] == 2 || /*i*/ ctx[34] == 2);
-    			add_location(div3, file$4, 187, 6, 5787);
+    			add_location(div3, file$4, 186, 6, 5839);
     			attr_dev(div4, "class", "timer");
-    			add_location(div4, file$4, 199, 10, 6533);
-    			add_location(b, file$4, 204, 12, 6986);
+    			add_location(div4, file$4, 198, 10, 6585);
+    			add_location(b, file$4, 203, 12, 7030);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$4, 203, 10, 6936);
+    			add_location(div5, file$4, 202, 10, 6980);
     			attr_dev(span, "class", "buttons");
-    			add_location(span, file$4, 198, 8, 6499);
+    			add_location(span, file$4, 197, 8, 6551);
     			attr_dev(footer, "class", "bottom-nav");
-    			add_location(footer, file$4, 197, 6, 6462);
+    			add_location(footer, file$4, 196, 6, 6514);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1929,14 +1929,14 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(183:4) {#if i == $currentitem}",
+    		source: "(182:4) {#if i == $currentitem}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (189:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
+    // (188:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
     function create_each_block_1$3(key_1, ctx) {
     	let label;
     	let span;
@@ -1972,7 +1972,7 @@ var app = (function () {
     			html_tag = new HtmlTag();
     			t2 = space();
     			attr_dev(span, "class", "option-no");
-    			add_location(span, file$4, 190, 12, 6038);
+    			add_location(span, file$4, 189, 12, 6090);
     			attr_dev(input, "type", "radio");
     			attr_dev(input, "name", "ans");
     			attr_dev(input, "id", input_id_value = "ans" + /*index*/ ctx[37]);
@@ -1982,13 +1982,13 @@ var app = (function () {
     			attr_dev(input, "class", "input-items");
     			attr_dev(input, "tabindex", "-1");
     			/*$$binding_groups*/ ctx[15][0][/*i*/ ctx[34]].push(input);
-    			add_location(input, file$4, 191, 12, 6116);
+    			add_location(input, file$4, 190, 12, 6168);
     			html_tag.a = t2;
     			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[37]);
     			attr_dev(label, "id", label_id_value = "option" + /*index*/ ctx[37]);
     			attr_dev(label, "class", "items");
     			attr_dev(label, "tabindex", "0");
-    			add_location(label, file$4, 189, 10, 5954);
+    			add_location(label, file$4, 188, 10, 6006);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -2062,14 +2062,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(189:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}",
+    		source: "(188:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (212:8) {#if $isopen}
+    // (211:8) {#if $isopen}
     function create_if_block_1$4(ctx) {
     	let endtestmodal;
     	let current;
@@ -2101,14 +2101,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(212:8) {#if $isopen}",
+    		source: "(211:8) {#if $isopen}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (182:2) {#each $question as dataItem, i (dataItem)}
+    // (181:2) {#each $question as dataItem, i (dataItem)}
     function create_each_block$3(key_1, ctx) {
     	let first;
     	let if_block_anchor;
@@ -2176,7 +2176,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(182:2) {#each $question as dataItem, i (dataItem)}",
+    		source: "(181:2) {#each $question as dataItem, i (dataItem)}",
     		ctx
     	});
 
@@ -2213,10 +2213,10 @@ var app = (function () {
 
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "style.css");
-    			add_location(link, file$4, 179, 0, 5431);
+    			add_location(link, file$4, 178, 0, 5483);
     			attr_dev(section, "class", "section");
     			toggle_class(section, "shift", /*$list*/ ctx[3]);
-    			add_location(section, file$4, 180, 0, 5475);
+    			add_location(section, file$4, 179, 0, 5527);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2328,7 +2328,7 @@ var app = (function () {
     	var currentselect = [];
 
     	//=========================================MAIN LOGIC FUNCTION================================================
-    	function toggleattempt(l, z, event) {
+    	function toggleattempt(index, question_item, event) {
     		Selected.push(event);
 
     		selectedanswer.update(its => {
@@ -2346,7 +2346,7 @@ var app = (function () {
     		//==========================================TO CHECK CURRENT ANSWER IS RIGHT OR NOT==========================
     		if ($correctans.includes(event)) {
     			iscorrect.push(event);
-    			questioncorrect.push(z);
+    			questioncorrect.push(question_item);
 
     			correctques.update(items => {
     				return [...questioncorrect];
@@ -2361,7 +2361,7 @@ var app = (function () {
     			});
     		}
 
-    		Main_Array.push(z);
+    		Main_Array.push(question_item);
 
     		//==================ATTEMPTED LOGIC==================================
     		attempted.update(its => {
@@ -2383,8 +2383,8 @@ var app = (function () {
     	});
 
     	for (let i = 0; i < correct.length; i++) {
-    		let x = JSON.parse(correct[i].content_text).question;
-    		questions.push(x);
+    		let ques_ans = JSON.parse(correct[i].content_text).question;
+    		questions.push(ques_ans);
 
     		if (JSON.parse(correct[i].content_text).answers[0].is_correct == 1) {
     			correctall.push(JSON.parse(correct[i].content_text).answers[0].answer);
@@ -2671,7 +2671,7 @@ var app = (function () {
     				margin: "btn-bottom",
     				type: "button",
     				id: "prev",
-    				name: "Prev-btn",
+    				name: "prev",
     				caption: "Previous",
     				disabled: /*$disable2*/ ctx[6]
     			},
@@ -2686,7 +2686,7 @@ var app = (function () {
     				margin: "btn-bottom",
     				type: "button",
     				id: "next",
-    				name: "Next-btn",
+    				name: "next",
     				caption: "Next",
     				disabled: /*$disable1*/ ctx[7]
     			},
@@ -2701,7 +2701,7 @@ var app = (function () {
     				margin: "btn-bottom",
     				type: "button",
     				id: "dash",
-    				name: "DashBoard-btn",
+    				name: "dash",
     				caption: "DashBoard"
     			},
     			$$inline: true
@@ -2742,24 +2742,24 @@ var app = (function () {
     			create_component(button2.$$.fragment);
     			t12 = space();
     			attr_dev(div0, "class", "number");
-    			add_location(div0, file$3, 92, 10, 2161);
+    			add_location(div0, file$3, 92, 10, 2177);
     			attr_dev(div1, "class", "box");
     			attr_dev(div1, "tabindex", "0");
-    			add_location(div1, file$3, 93, 10, 2207);
+    			add_location(div1, file$3, 93, 10, 2223);
     			attr_dev(div2, "class", "review-question");
-    			add_location(div2, file$3, 91, 8, 2120);
+    			add_location(div2, file$3, 91, 8, 2136);
     			attr_dev(div3, "class", "review-question-section");
     			toggle_class(div3, "top-shift", /*i*/ ctx[16] == 2);
-    			add_location(div3, file$3, 95, 8, 2313);
+    			add_location(div3, file$3, 95, 8, 2329);
     			attr_dev(div4, "class", "explanation");
     			attr_dev(div4, "tabindex", "0");
-    			add_location(div4, file$3, 106, 8, 3173);
-    			add_location(b, file$3, 119, 12, 3737);
+    			add_location(div4, file$3, 106, 8, 3189);
+    			add_location(b, file$3, 119, 12, 3749);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$3, 118, 10, 3687);
+    			add_location(div5, file$3, 118, 10, 3699);
     			attr_dev(div6, "class", "bottom-nav");
-    			add_location(div6, file$3, 115, 8, 3486);
+    			add_location(div6, file$3, 115, 8, 3502);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -2905,10 +2905,10 @@ var app = (function () {
     			: false;
 
     			input.disabled = "disabled";
-    			add_location(input, file$3, 99, 14, 2712);
+    			add_location(input, file$3, 99, 14, 2728);
     			toggle_class(div, "radio_radio", /*ans*/ ctx[20].is_correct == 1 || /*ans*/ ctx[20].answer);
     			toggle_class(div, "wrong", /*$selectedanswer*/ ctx[5][/*i*/ ctx[16]] == /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 0);
-    			add_location(div, file$3, 101, 16, 2941);
+    			add_location(div, file$3, 101, 16, 2957);
     			html_tag.a = t3;
     			attr_dev(label, "tabindex", "0");
     			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[19]);
@@ -2916,7 +2916,7 @@ var app = (function () {
     			attr_dev(label, "class", "radio");
     			toggle_class(label, "bold", /*ans*/ ctx[20].is_correct == 1);
     			toggle_class(label, "not-bold", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[20].answer) && /*ans*/ ctx[20].is_correct == 0);
-    			add_location(label, file$3, 97, 12, 2470);
+    			add_location(label, file$3, 97, 12, 2486);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
@@ -3304,12 +3304,12 @@ var app = (function () {
     			if (if_block) if_block.c();
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "style.css");
-    			add_location(link, file$3, 83, 0, 1869);
-    			add_location(header, file$3, 84, 0, 1913);
+    			add_location(link, file$3, 83, 0, 1885);
+    			add_location(header, file$3, 84, 0, 1929);
     			attr_dev(section, "class", "review-section");
-    			add_location(section, file$3, 88, 2, 2002);
+    			add_location(section, file$3, 88, 2, 2018);
     			attr_dev(div, "class", "review");
-    			add_location(div, file$3, 87, 0, 1978);
+    			add_location(div, file$3, 87, 0, 1994);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3440,11 +3440,11 @@ var app = (function () {
     	});
 
     	selectedanswer.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		$$invalidate(3, currentselect = [...t]);
+    		$$invalidate(3, currentselect = [...Duplicate]);
     	});
 
     	if ($current > 0) {
@@ -3611,14 +3611,14 @@ var app = (function () {
     			span = element("span");
     			i = element("i");
     			t = text(t_value);
-    			add_location(i, file$2, 166, 16, 5804);
+    			add_location(i, file$2, 166, 16, 5942);
     			attr_dev(span, "is_correct", span_is_correct_value = /*ans*/ ctx[31].is_correct);
     			attr_dev(span, "class", "dot");
     			attr_dev(span, "id", span_id_value = "ans" + /*index*/ ctx[33]);
     			attr_dev(span, "value", span_value_value = /*ans*/ ctx[31].answer);
     			toggle_class(span, "success", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 1 || /*ans*/ ctx[31].is_correct == 1);
     			toggle_class(span, "unsuccess", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 0);
-    			add_location(span, file$2, 163, 14, 5495);
+    			add_location(span, file$2, 163, 14, 5633);
     			this.first = span;
     		},
     		m: function mount(target, anchor) {
@@ -3681,11 +3681,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Unattempted";
     			attr_dev(i, "class", "fa fa-eye-slash top");
-    			add_location(i, file$2, 171, 16, 6005);
+    			add_location(i, file$2, 171, 16, 6143);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 172, 16, 6056);
+    			add_location(span, file$2, 172, 16, 6194);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 170, 14, 5966);
+    			add_location(div, file$2, 170, 14, 6104);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3724,11 +3724,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Incorrect";
     			attr_dev(i, "class", "fa fa-close");
-    			add_location(i, file$2, 182, 16, 6672);
+    			add_location(i, file$2, 182, 16, 6810);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 183, 16, 6715);
+    			add_location(span, file$2, 183, 16, 6853);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 181, 14, 6633);
+    			add_location(div, file$2, 181, 14, 6771);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3767,11 +3767,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Correct";
     			attr_dev(i, "class", "fa fa-check");
-    			add_location(i, file$2, 177, 16, 6351);
+    			add_location(i, file$2, 177, 16, 6489);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 178, 16, 6394);
+    			add_location(span, file$2, 178, 16, 6532);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 176, 14, 6312);
+    			add_location(div, file$2, 176, 14, 6450);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3866,18 +3866,18 @@ var app = (function () {
     			t6 = space();
     			attr_dev(td0, "class", "center");
     			attr_dev(td0, "tabindex", "0");
-    			add_location(td0, file$2, 158, 8, 5199);
+    			add_location(td0, file$2, 158, 8, 5330);
     			attr_dev(td1, "id", "questions");
     			attr_dev(td1, "tabindex", "0");
-    			add_location(td1, file$2, 159, 8, 5253);
+    			add_location(td1, file$2, 159, 8, 5384);
     			attr_dev(div, "class", "center");
-    			add_location(div, file$2, 161, 10, 5376);
-    			add_location(td2, file$2, 160, 8, 5360);
+    			add_location(div, file$2, 161, 10, 5514);
+    			add_location(td2, file$2, 160, 8, 5498);
     			toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
     			toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
     			toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
     			toggle_class(tr, "un", /*showunattempt*/ ctx[10] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
-    			add_location(tr, file$2, 152, 6, 4391);
+    			add_location(tr, file$2, 152, 6, 4522);
     			this.first = tr;
     		},
     		m: function mount(target, anchor) {
@@ -3906,7 +3906,7 @@ var app = (function () {
     					td1,
     					"click",
     					function () {
-    						if (is_function(/*r*/ ctx[15](/*i*/ ctx[30]))) /*r*/ ctx[15](/*i*/ ctx[30]).apply(this, arguments);
+    						if (is_function(/*goReview*/ ctx[15](/*i*/ ctx[30]))) /*goReview*/ ctx[15](/*i*/ ctx[30]).apply(this, arguments);
     					},
     					false,
     					false,
@@ -4210,70 +4210,70 @@ var app = (function () {
     			if_block_anchor = empty();
     			attr_dev(link0, "rel", "stylesheet");
     			attr_dev(link0, "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-    			add_location(link0, file$2, 111, 0, 2594);
+    			add_location(link0, file$2, 111, 0, 2725);
     			attr_dev(link1, "rel", "stylesheet");
     			attr_dev(link1, "href", "style.css");
-    			add_location(link1, file$2, 112, 0, 2710);
-    			add_location(header, file$2, 113, 0, 2754);
+    			add_location(link1, file$2, 112, 0, 2841);
+    			add_location(header, file$2, 113, 0, 2885);
     			attr_dev(i0, "class", "fa fa-bar-chart result");
-    			add_location(i0, file$2, 119, 6, 2916);
+    			add_location(i0, file$2, 119, 6, 3047);
     			attr_dev(b0, "class", "result");
-    			add_location(b0, file$2, 118, 4, 2890);
-    			add_location(br0, file$2, 120, 8, 2971);
+    			add_location(b0, file$2, 118, 4, 3021);
+    			add_location(br0, file$2, 120, 8, 3102);
     			attr_dev(div0, "class", "result-item");
     			attr_dev(div0, "tabindex", "0");
-    			add_location(div0, file$2, 117, 2, 2846);
+    			add_location(div0, file$2, 117, 2, 2977);
     			attr_dev(i1, "class", "fa fa-bars all");
-    			add_location(i1, file$2, 124, 6, 3162);
+    			add_location(i1, file$2, 124, 6, 3293);
     			attr_dev(b1, "class", "all");
-    			add_location(b1, file$2, 123, 4, 3139);
-    			add_location(br1, file$2, 125, 8, 3219);
+    			add_location(b1, file$2, 123, 4, 3270);
+    			add_location(br1, file$2, 125, 8, 3350);
     			attr_dev(div1, "class", "result-item");
     			attr_dev(div1, "tabindex", "0");
-    			add_location(div1, file$2, 122, 2, 2996);
+    			add_location(div1, file$2, 122, 2, 3127);
     			attr_dev(i2, "class", "fa fa-check correct");
-    			add_location(i2, file$2, 129, 6, 3417);
+    			add_location(i2, file$2, 129, 6, 3548);
     			attr_dev(b2, "class", "correct");
-    			add_location(b2, file$2, 128, 4, 3390);
-    			add_location(br2, file$2, 130, 8, 3475);
+    			add_location(b2, file$2, 128, 4, 3521);
+    			add_location(br2, file$2, 130, 8, 3606);
     			attr_dev(div2, "class", "result-item");
     			attr_dev(div2, "tabindex", "0");
-    			add_location(div2, file$2, 127, 2, 3247);
+    			add_location(div2, file$2, 127, 2, 3378);
     			attr_dev(i3, "class", "fa fa-close incorrect");
-    			add_location(i3, file$2, 134, 6, 3674);
+    			add_location(i3, file$2, 134, 6, 3805);
     			attr_dev(b3, "class", "incorrect");
-    			add_location(b3, file$2, 133, 4, 3645);
-    			add_location(br3, file$2, 135, 8, 3742);
+    			add_location(b3, file$2, 133, 4, 3776);
+    			add_location(br3, file$2, 135, 8, 3873);
     			attr_dev(div3, "class", "result-item");
     			attr_dev(div3, "tabindex", "0");
-    			add_location(div3, file$2, 132, 2, 3502);
+    			add_location(div3, file$2, 132, 2, 3633);
     			attr_dev(i4, "class", "fa fa-eye-slash unattempt");
-    			add_location(i4, file$2, 139, 6, 3943);
+    			add_location(i4, file$2, 139, 6, 4074);
     			attr_dev(b4, "class", "unattempt");
-    			add_location(b4, file$2, 138, 4, 3914);
-    			add_location(br4, file$2, 140, 8, 4004);
+    			add_location(b4, file$2, 138, 4, 4045);
+    			add_location(br4, file$2, 140, 8, 4135);
     			attr_dev(div4, "class", "result-item");
     			attr_dev(div4, "tabindex", "0");
-    			add_location(div4, file$2, 137, 2, 3771);
-    			add_location(br5, file$2, 141, 8, 4031);
+    			add_location(div4, file$2, 137, 2, 3902);
+    			add_location(br5, file$2, 141, 8, 4162);
     			attr_dev(div5, "class", "container");
-    			add_location(div5, file$2, 116, 0, 2819);
+    			add_location(div5, file$2, 116, 0, 2950);
     			attr_dev(p, "class", "time font-700");
     			attr_dev(p, "tabindex", "0");
-    			add_location(p, file$2, 143, 0, 4047);
+    			add_location(p, file$2, 143, 0, 4178);
     			attr_dev(th0, "class", "first");
     			attr_dev(th0, "tabindex", "0");
-    			add_location(th0, file$2, 147, 6, 4174);
+    			add_location(th0, file$2, 147, 6, 4305);
     			attr_dev(th1, "class", "second");
     			attr_dev(th1, "tabindex", "0");
-    			add_location(th1, file$2, 148, 6, 4226);
+    			add_location(th1, file$2, 148, 6, 4357);
     			attr_dev(th2, "class", "third");
     			attr_dev(th2, "tabindex", "0");
-    			add_location(th2, file$2, 149, 6, 4280);
-    			add_location(tr, file$2, 146, 4, 4162);
-    			add_location(table, file$2, 145, 2, 4149);
+    			add_location(th2, file$2, 149, 6, 4411);
+    			add_location(tr, file$2, 146, 4, 4293);
+    			add_location(table, file$2, 145, 2, 4280);
     			attr_dev(div6, "class", "table");
-    			add_location(div6, file$2, 144, 0, 4126);
+    			add_location(div6, file$2, 144, 0, 4257);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4374,7 +4374,7 @@ var app = (function () {
     			if (!current || dirty[0] & /*minutes*/ 2) set_data_dev(t24, /*minutes*/ ctx[1]);
     			if (!current || dirty[0] & /*secs*/ 4096) set_data_dev(t26, /*secs*/ ctx[12]);
 
-    			if (dirty[0] & /*showcorrect, questioncorrect, $question, dummyarray, showincorrect, showall, showunattempt, currentselect, r*/ 52920) {
+    			if (dirty[0] & /*showcorrect, questioncorrect, $question, dummyarray, showincorrect, showall, showunattempt, currentselect, goReview*/ 52920) {
     				each_value = /*$question*/ ctx[14];
     				validate_each_argument(each_value);
     				validate_each_keys(ctx, each_value, get_each_context$1, get_key);
@@ -4496,69 +4496,69 @@ var app = (function () {
     	}
 
     	attempted.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		$$invalidate(7, dummyarray = [...t]);
-    		$$invalidate(6, count = t.length);
+    		$$invalidate(7, dummyarray = [...Duplicate]);
+    		$$invalidate(6, count = Duplicate.length);
     	});
 
     	unattempted.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		Raw_Unattempted = t.length;
+    		Raw_Unattempted = Duplicate.length;
     	});
 
     	currentcorrect.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		Current_Correct = [...t];
-    		$$invalidate(0, correctlength = t.length);
+    		Current_Correct = [...Duplicate];
+    		$$invalidate(0, correctlength = Duplicate.length);
     	});
 
-    	function r(x) {
+    	function goReview(jump) {
     		$$invalidate(8, review = true);
 
     		current.update(its => {
-    			return x;
+    			return jump;
     		});
 
-    		if (x == 0) {
+    		if (jump == 0) {
     			set_store_value(disable2, $disable2 = true, $disable2);
     		}
 
-    		if (x > 0) {
+    		if (jump > 0) {
     			$disable1.set(false);
     		}
     	}
 
     	selectedanswer.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		$$invalidate(9, currentselect = [...t]);
+    		$$invalidate(9, currentselect = [...Duplicate]);
     	});
 
     	allincorrect.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		incorrect = [...t];
+    		incorrect = [...Duplicate];
     	});
 
     	correctques.subscribe(items => {
-    		let t = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		$$invalidate(11, questioncorrect = [...t]);
+    		$$invalidate(11, questioncorrect = [...Duplicate]);
     	});
 
     	const writable_props = [];
@@ -4628,7 +4628,7 @@ var app = (function () {
     		questioncorrect,
     		secs,
     		min,
-    		r,
+    		goReview,
     		$disable1,
     		$disable2,
     		$timetaken,
@@ -4687,7 +4687,7 @@ var app = (function () {
     		secs,
     		$allques,
     		$question,
-    		r,
+    		goReview,
     		click_handler,
     		click_handler_1,
     		click_handler_2,
@@ -4733,7 +4733,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (151:2) {#if allitems}
+    // (149:2) {#if allitems}
     function create_if_block_4$1(ctx) {
     	let div;
     	let each_blocks = [];
@@ -4757,7 +4757,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(div, file$1, 151, 4, 3725);
+    			add_location(div, file$1, 149, 4, 3846);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4787,14 +4787,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(151:2) {#if allitems}",
+    		source: "(149:2) {#if allitems}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (153:6) {#each $question as items, v (items)}
+    // (151:6) {#each $question as items, v (items)}
     function create_each_block_2(key_1, ctx) {
     	let div;
     	let t0_value = /*v*/ ctx[32] + 1 + "";
@@ -4817,7 +4817,7 @@ var app = (function () {
     			t3 = space();
     			attr_dev(div, "class", "all-items");
     			attr_dev(div, "tabindex", "0");
-    			add_location(div, file$1, 153, 8, 3785);
+    			add_location(div, file$1, 151, 8, 3906);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -4858,14 +4858,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(153:6) {#each $question as items, v (items)}",
+    		source: "(151:6) {#each $question as items, v (items)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (160:2) {#if showatt}
+    // (158:2) {#if showatt}
     function create_if_block_2$1(ctx) {
     	let div1;
     	let div0;
@@ -4897,9 +4897,9 @@ var app = (function () {
     			attr_dev(div0, "class", "all-items");
     			attr_dev(div0, "tabindex", "0");
     			toggle_class(div0, "hide", /*Raw_Attempt*/ ctx[3].length > 0);
-    			add_location(div0, file$1, 161, 6, 4016);
+    			add_location(div0, file$1, 159, 6, 4137);
     			attr_dev(div1, "class", "container-1");
-    			add_location(div1, file$1, 160, 4, 3983);
+    			add_location(div1, file$1, 158, 4, 4104);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -4935,14 +4935,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$1.name,
     		type: "if",
-    		source: "(160:2) {#if showatt}",
+    		source: "(158:2) {#if showatt}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (165:8) {#if Raw_Attempt.length >= 0}
+    // (163:8) {#if Raw_Attempt.length >= 0}
     function create_if_block_3$1(ctx) {
     	let div;
     	let t0_value = /*i*/ ctx[29] + 1 + "";
@@ -4962,8 +4962,8 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			attr_dev(div, "class", "all-items hid");
-    			toggle_class(div, "s", /*Raw_Attempt*/ ctx[3].includes(JSON.parse(/*dataItem*/ ctx[27].content_text).question));
-    			add_location(div, file$1, 165, 10, 4226);
+    			toggle_class(div, "shown", /*Raw_Attempt*/ ctx[3].includes(JSON.parse(/*dataItem*/ ctx[27].content_text).question));
+    			add_location(div, file$1, 163, 10, 4347);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4993,7 +4993,7 @@ var app = (function () {
     			if (dirty[0] & /*$question*/ 64 && t2_value !== (t2_value = JSON.parse(/*dataItem*/ ctx[27].content_text).question + "")) set_data_dev(t2, t2_value);
 
     			if (dirty[0] & /*Raw_Attempt, $question*/ 72) {
-    				toggle_class(div, "s", /*Raw_Attempt*/ ctx[3].includes(JSON.parse(/*dataItem*/ ctx[27].content_text).question));
+    				toggle_class(div, "shown", /*Raw_Attempt*/ ctx[3].includes(JSON.parse(/*dataItem*/ ctx[27].content_text).question));
     			}
     		},
     		d: function destroy(detaching) {
@@ -5007,14 +5007,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(165:8) {#if Raw_Attempt.length >= 0}",
+    		source: "(163:8) {#if Raw_Attempt.length >= 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (164:6) {#each $question as dataItem, i (dataItem)}
+    // (162:6) {#each $question as dataItem, i (dataItem)}
     function create_each_block_1(key_1, ctx) {
     	let first;
     	let if_block_anchor;
@@ -5061,14 +5061,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(164:6) {#each $question as dataItem, i (dataItem)}",
+    		source: "(162:6) {#each $question as dataItem, i (dataItem)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (173:2) {#if showunatt}
+    // (171:2) {#if showunatt}
     function create_if_block$1(ctx) {
     	let div;
     	let t;
@@ -5096,7 +5096,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(div, file$1, 173, 4, 4515);
+    			add_location(div, file$1, 171, 4, 4640);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5140,14 +5140,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(173:2) {#if showunatt}",
+    		source: "(171:2) {#if showunatt}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (175:6) {#if Raw_Unattempted == 0}
+    // (173:6) {#if Raw_Unattempted == 0}
     function create_if_block_1$1(ctx) {
     	let div;
 
@@ -5157,7 +5157,7 @@ var app = (function () {
     			div.textContent = "ALL ATTEMPTED";
     			attr_dev(div, "class", "all-items");
     			attr_dev(div, "tabindex", "0");
-    			add_location(div, file$1, 175, 8, 4564);
+    			add_location(div, file$1, 173, 8, 4689);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5171,14 +5171,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(175:6) {#if Raw_Unattempted == 0}",
+    		source: "(173:6) {#if Raw_Unattempted == 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (177:6) {#each $unattempted as dos, j (dos)}
+    // (175:6) {#each $unattempted as dos, j (dos)}
     function create_each_block(key_1, ctx) {
     	let div;
     	let t0_value = localStorage.getItem(/*dos*/ ctx[24]) + "";
@@ -5199,7 +5199,7 @@ var app = (function () {
     			t2 = text(t2_value);
     			attr_dev(div, "class", "all-items");
     			attr_dev(div, "tabindex", "0");
-    			add_location(div, file$1, 177, 8, 4678);
+    			add_location(div, file$1, 175, 8, 4803);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -5239,7 +5239,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(177:6) {#each $unattempted as dos, j (dos)}",
+    		source: "(175:6) {#each $unattempted as dos, j (dos)}",
     		ctx
     	});
 
@@ -5297,24 +5297,24 @@ var app = (function () {
     			if (if_block2) if_block2.c();
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "style.css");
-    			add_location(link, file$1, 136, 0, 3080);
+    			add_location(link, file$1, 134, 0, 3201);
     			attr_dev(div0, "class", "list-backdrop");
-    			add_location(div0, file$1, 137, 0, 3124);
+    			add_location(div0, file$1, 135, 0, 3245);
     			attr_dev(h20, "class", "sub-heading");
     			attr_dev(h20, "tabindex", "0");
     			toggle_class(h20, "change", /*allitems*/ ctx[1] && !/*showatt*/ ctx[4] && !/*showunatt*/ ctx[5]);
-    			add_location(h20, file$1, 140, 4, 3224);
+    			add_location(h20, file$1, 138, 4, 3345);
     			attr_dev(h21, "class", "sub-heading");
     			attr_dev(h21, "tabindex", "0");
     			toggle_class(h21, "change", !/*allitems*/ ctx[1] && /*showatt*/ ctx[4] && !/*showunatt*/ ctx[5]);
-    			add_location(h21, file$1, 143, 4, 3381);
+    			add_location(h21, file$1, 141, 4, 3502);
     			attr_dev(h22, "class", "sub-heading");
     			toggle_class(h22, "change", !/*allitems*/ ctx[1] && !/*showatt*/ ctx[4] && /*showunatt*/ ctx[5]);
-    			add_location(h22, file$1, 146, 4, 3544);
+    			add_location(h22, file$1, 144, 4, 3665);
     			attr_dev(div1, "class", "heads");
-    			add_location(div1, file$1, 139, 2, 3199);
+    			add_location(div1, file$1, 137, 2, 3320);
     			attr_dev(div2, "class", "list");
-    			add_location(div2, file$1, 138, 0, 3177);
+    			add_location(div2, file$1, 136, 0, 3298);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5454,7 +5454,7 @@ var app = (function () {
     	component_subscribe($$self, unattempted, $$value => $$invalidate(7, $unattempted = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('List', slots, []);
-    	var chr = String.fromCharCode(65 + 1);
+    	var character = String.fromCharCode(65 + 1);
     	let allitems = true;
     	let Remove_Duplicate;
     	var count;
@@ -5497,14 +5497,14 @@ var app = (function () {
     		$$invalidate(15, count = Remove_Duplicate.length);
     	});
 
-    	for (let i of Raw_Attempt) {
-    		let p = $allques.indexOf(i);
-    		delete $allques[p];
+    	for (let items of Raw_Attempt) {
+    		let Attempt_items = $allques.indexOf(items);
+    		delete $allques[Attempt_items];
     	}
 
-    	for (let b of $allques) {
-    		if (b != undefined) {
-    			Raw_Unattempted.push(b);
+    	for (let allitems of $allques) {
+    		if (allitems != undefined) {
+    			Raw_Unattempted.push(allitems);
     		}
     	}
 
@@ -5513,11 +5513,11 @@ var app = (function () {
     	});
 
     	unattempted.subscribe(items => {
-    		let e = items.filter((c, index) => {
+    		let Duplicate = items.filter((c, index) => {
     			return items.indexOf(c) === index;
     		});
 
-    		final = [...final, ...e];
+    		final = [...final, ...Duplicate];
     	});
 
     	function showattempt() {
@@ -5538,12 +5538,12 @@ var app = (function () {
     		$$invalidate(5, showunatt = false);
     	}
 
-    	function goto(x, event) {
+    	function goto(items, event) {
     		clicked = true;
 
     		question.subscribe(ies => {
-    			var z = ies.indexOf(event);
-    			currentitem.set(z);
+    			var jump_to = ies.indexOf(event);
+    			currentitem.set(jump_to);
 
     			if ($currentitem == 0) {
     				counter.set(0);
@@ -5558,16 +5558,16 @@ var app = (function () {
 
     	question.subscribe(item => {
     		for (let y = 0; y < item.length; y++) {
-    			let x = JSON.parse(item[y].content_text).question;
-    			dummy.push(x);
+    			let items = JSON.parse(item[y].content_text).question;
+    			dummy.push(items);
     		}
     	});
 
-    	function gotoa(y, event) {
-    		let p = dummy.indexOf(event);
+    	function gotoa(element, event) {
+    		let Attempt_items = dummy.indexOf(event);
 
     		currentitem.update(its => {
-    			return p;
+    			return Attempt_items;
     		});
 
     		if ($currentitem == 0 || $currentitem == 1) {
@@ -5595,7 +5595,7 @@ var app = (function () {
     		currentitem,
     		question,
     		allques,
-    		chr,
+    		character,
     		allitems,
     		Remove_Duplicate,
     		count,
@@ -5622,7 +5622,7 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('chr' in $$props) chr = $$props.chr;
+    		if ('character' in $$props) character = $$props.character;
     		if ('allitems' in $$props) $$invalidate(1, allitems = $$props.allitems);
     		if ('Remove_Duplicate' in $$props) $$invalidate(2, Remove_Duplicate = $$props.Remove_Duplicate);
     		if ('count' in $$props) $$invalidate(15, count = $$props.count);
@@ -5947,7 +5947,7 @@ var app = (function () {
     				margin: "btn",
     				type: "button",
     				id: "Start",
-    				name: "Start-btn",
+    				name: "Start",
     				caption: "Start Test"
     			},
     			$$inline: true
@@ -6001,7 +6001,7 @@ var app = (function () {
     				class: "success",
     				type: "button",
     				id: "Start",
-    				name: "Start-btn",
+    				name: "Start",
     				caption: "Start Test"
     			},
     			$$inline: true

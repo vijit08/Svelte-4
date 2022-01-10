@@ -33,10 +33,10 @@
   });
   
   selectedanswer.subscribe((items) => {
-    let t = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
-    currentselect = [...t];
+    currentselect = [...Duplicate];
   });
 
   if ($current > 0) {
@@ -114,14 +114,14 @@
           {/if}
         </div>
         <div class="bottom-nav">
-          <Button style="button" margin="btn-bottom" type="button" id="prev" name="Prev-btn" caption="Previous" disabled={$disable2}
+          <Button style="button" margin="btn-bottom" type="button" id="prev" name="prev" caption="Previous" disabled={$disable2}
             on:click={prev}/>
           <div class="numbering" tabindex="0">
             <b>{i + 1} of 11</b>
           </div>
-          <Button style="button" margin="btn-bottom" type="button" id="next" name="Next-btn" caption="Next" disabled={$disable1}
+          <Button style="button" margin="btn-bottom" type="button" id="next" name="next" caption="Next" disabled={$disable1}
             on:click={next}/>
-          <Button style="button" margin="btn-bottom" type="button" id="dash" name="DashBoard-btn" caption="DashBoard" on:click={dash}/>
+          <Button style="button" margin="btn-bottom" type="button" id="dash" name="dash" caption="DashBoard" on:click={dash}/>
         </div>
       {/if}
     {/each}

@@ -5,8 +5,8 @@
   import { currentitem } from "../data-store.js";
   import { question } from "../data-store.js";
   import { allques } from "../data-store.js";
-  var chr = String.fromCharCode(65 + 1);
-
+  
+  var character = String.fromCharCode(65 + 1);
   let allitems = true;
   let Remove_Duplicate;
   var count;
@@ -48,14 +48,14 @@
     count = Remove_Duplicate.length;
   });
 
-  for (let i of Raw_Attempt) {
-    let p = $allques.indexOf(i);
-    delete $allques[p];
+  for (let items of Raw_Attempt) {
+    let Attempt_items = $allques.indexOf(items);
+    delete $allques[Attempt_items];
   }
 
-  for (let b of $allques) {
-    if (b != undefined) {
-      Raw_Unattempted.push(b);
+  for (let allitems of $allques) {
+    if (allitems != undefined) {
+      Raw_Unattempted.push(allitems);
     }
   }
 
@@ -64,18 +64,16 @@
   });
 
   unattempted.subscribe((items) => {
-    let e = items.filter((c, index) => {
+    let Duplicate = items.filter((c, index) => {
       return items.indexOf(c) === index;
     });
 
-    final = [...final, ...e];
+    final = [...final, ...Duplicate];
   });
 
   $: Remove_Duplicate = count;
   $: Raw_Unattempted = Raw_Unattempted.length;
 
-  
-  
   function showattempt() {
     showatt = true;
     showunatt = !showatt;
@@ -94,11 +92,11 @@
     showunatt = false;
 }
 
-  function goto(x, event) {
+  function goto(items,event) {
     clicked = true;
     question.subscribe((ies) => {
-      var z = ies.indexOf(event);
-      currentitem.set(z);
+      var jump_to = ies.indexOf(event);
+      currentitem.set(jump_to);
       if ($currentitem == 0) {
         counter.set(0);
         disable2.set(true);
@@ -113,15 +111,15 @@
 
   question.subscribe((item) => {
     for (let y = 0; y < item.length; y++) {
-      let x = JSON.parse(item[y].content_text).question;
-      dummy.push(x);
+      let items = JSON.parse(item[y].content_text).question;
+      dummy.push(items);
     }
   });
 
-  function gotoa(y, event) {
-    let p = dummy.indexOf(event);
+  function gotoa(element,event) {
+    let Attempt_items = dummy.indexOf(event);
     currentitem.update((its) => {
-      return p;
+      return Attempt_items;
     });
     if ($currentitem == 0 || $currentitem == 1) {
       disable2.set(true);
@@ -163,7 +161,7 @@
       </div>
       {#each $question as dataItem, i (dataItem)}
         {#if Raw_Attempt.length >= 0}
-          <div class="all-items hid" class:s={Raw_Attempt.includes(JSON.parse(dataItem.content_text).question)} on:click={goto(i, dataItem)}>
+          <div class="all-items hid" class:shown={Raw_Attempt.includes(JSON.parse(dataItem.content_text).question)} on:click={goto(i, dataItem)}>
             {i+1}.{JSON.parse(dataItem.content_text).question}
           </div>
         {/if}
