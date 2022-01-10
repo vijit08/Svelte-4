@@ -3582,15 +3582,15 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[28] = list[i];
-    	child_ctx[30] = i;
+    	child_ctx[29] = list[i];
+    	child_ctx[31] = i;
     	return child_ctx;
     }
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[31] = list[i];
-    	child_ctx[33] = i;
+    	child_ctx[32] = list[i];
+    	child_ctx[34] = i;
     	return child_ctx;
     }
 
@@ -3598,7 +3598,7 @@ var app = (function () {
     function create_each_block_1$1(key_1, ctx) {
     	let span;
     	let i;
-    	let t_value = /*index*/ ctx[33] + 1 + "";
+    	let t_value = /*index*/ ctx[34] + 1 + "";
     	let t;
     	let span_is_correct_value;
     	let span_id_value;
@@ -3611,13 +3611,13 @@ var app = (function () {
     			span = element("span");
     			i = element("i");
     			t = text(t_value);
-    			add_location(i, file$2, 166, 16, 5942);
-    			attr_dev(span, "is_correct", span_is_correct_value = /*ans*/ ctx[31].is_correct);
+    			add_location(i, file$2, 166, 16, 5946);
+    			attr_dev(span, "is_correct", span_is_correct_value = /*ans*/ ctx[32].is_correct);
     			attr_dev(span, "class", "dot");
-    			attr_dev(span, "id", span_id_value = "ans" + /*index*/ ctx[33]);
-    			attr_dev(span, "value", span_value_value = /*ans*/ ctx[31].answer);
-    			toggle_class(span, "success", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 1 || /*ans*/ ctx[31].is_correct == 1);
-    			toggle_class(span, "unsuccess", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 0);
+    			attr_dev(span, "id", span_id_value = "ans" + /*index*/ ctx[34]);
+    			attr_dev(span, "value", span_value_value = /*ans*/ ctx[32].answer);
+    			toggle_class(span, "success", /*$selectedanswer*/ ctx[14].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 1 || /*ans*/ ctx[32].is_correct == 1);
+    			toggle_class(span, "unsuccess", /*$selectedanswer*/ ctx[14].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 0);
     			add_location(span, file$2, 163, 14, 5633);
     			this.first = span;
     		},
@@ -3628,26 +3628,26 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$question*/ 16384 && t_value !== (t_value = /*index*/ ctx[33] + 1 + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*$question*/ 8192 && t_value !== (t_value = /*index*/ ctx[34] + 1 + "")) set_data_dev(t, t_value);
 
-    			if (dirty[0] & /*$question*/ 16384 && span_is_correct_value !== (span_is_correct_value = /*ans*/ ctx[31].is_correct)) {
+    			if (dirty[0] & /*$question*/ 8192 && span_is_correct_value !== (span_is_correct_value = /*ans*/ ctx[32].is_correct)) {
     				attr_dev(span, "is_correct", span_is_correct_value);
     			}
 
-    			if (dirty[0] & /*$question*/ 16384 && span_id_value !== (span_id_value = "ans" + /*index*/ ctx[33])) {
+    			if (dirty[0] & /*$question*/ 8192 && span_id_value !== (span_id_value = "ans" + /*index*/ ctx[34])) {
     				attr_dev(span, "id", span_id_value);
     			}
 
-    			if (dirty[0] & /*$question*/ 16384 && span_value_value !== (span_value_value = /*ans*/ ctx[31].answer)) {
+    			if (dirty[0] & /*$question*/ 8192 && span_value_value !== (span_value_value = /*ans*/ ctx[32].answer)) {
     				attr_dev(span, "value", span_value_value);
     			}
 
-    			if (dirty[0] & /*currentselect, $question*/ 16896) {
-    				toggle_class(span, "success", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 1 || /*ans*/ ctx[31].is_correct == 1);
+    			if (dirty[0] & /*$selectedanswer, $question*/ 24576) {
+    				toggle_class(span, "success", /*$selectedanswer*/ ctx[14].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 1 || /*ans*/ ctx[32].is_correct == 1);
     			}
 
-    			if (dirty[0] & /*currentselect, $question*/ 16896) {
-    				toggle_class(span, "unsuccess", /*currentselect*/ ctx[9].includes(/*ans*/ ctx[31].answer) && /*ans*/ ctx[31].is_correct == 0);
+    			if (dirty[0] & /*$selectedanswer, $question*/ 24576) {
+    				toggle_class(span, "unsuccess", /*$selectedanswer*/ ctx[14].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 0);
     			}
     		},
     		d: function destroy(detaching) {
@@ -3681,11 +3681,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Unattempted";
     			attr_dev(i, "class", "fa fa-eye-slash top");
-    			add_location(i, file$2, 171, 16, 6143);
+    			add_location(i, file$2, 171, 16, 6147);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 172, 16, 6194);
+    			add_location(span, file$2, 172, 16, 6198);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 170, 14, 6104);
+    			add_location(div, file$2, 170, 14, 6108);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3724,11 +3724,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Incorrect";
     			attr_dev(i, "class", "fa fa-close");
-    			add_location(i, file$2, 182, 16, 6810);
+    			add_location(i, file$2, 182, 16, 6814);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 183, 16, 6853);
+    			add_location(span, file$2, 183, 16, 6857);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 181, 14, 6771);
+    			add_location(div, file$2, 181, 14, 6775);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3767,11 +3767,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Correct";
     			attr_dev(i, "class", "fa fa-check");
-    			add_location(i, file$2, 177, 16, 6489);
+    			add_location(i, file$2, 177, 16, 6493);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 178, 16, 6532);
+    			add_location(span, file$2, 178, 16, 6536);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 176, 14, 6450);
+    			add_location(div, file$2, 176, 14, 6454);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3799,11 +3799,11 @@ var app = (function () {
     function create_each_block$1(key_1, ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*i*/ ctx[30] + 1 + "";
+    	let t0_value = /*i*/ ctx[31] + 1 + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = JSON.parse(/*dataItem*/ ctx[28].content_text).question + "";
+    	let t2_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "";
     	let t2;
     	let t3;
     	let td2;
@@ -3811,16 +3811,16 @@ var app = (function () {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
     	let t4;
-    	let show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question);
+    	let show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question);
     	let t5;
     	let show_if;
     	let show_if_1;
     	let t6;
     	let mounted;
     	let dispose;
-    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[28].content_text).answers;
+    	let each_value_1 = JSON.parse(/*dataItem*/ ctx[29].content_text).answers;
     	validate_each_argument(each_value_1);
-    	const get_key = ctx => /*ans*/ ctx[31];
+    	const get_key = ctx => /*ans*/ ctx[32];
     	validate_each_keys(ctx, each_value_1, get_each_context_1$1, get_key);
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
@@ -3832,9 +3832,9 @@ var app = (function () {
     	let if_block0 = show_if_2 && create_if_block_3$2(ctx);
 
     	function select_block_type(ctx, dirty) {
-    		if (show_if == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 18560) show_if = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) && /*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
+    		if (show_if == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 9344) show_if = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) && /*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
     		if (show_if) return create_if_block_1$2;
-    		if (show_if_1 == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 18560) show_if_1 = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) && !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
+    		if (show_if_1 == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 9344) show_if_1 = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) && !/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
     		if (show_if_1) return create_if_block_2$2;
     	}
 
@@ -3873,10 +3873,10 @@ var app = (function () {
     			attr_dev(div, "class", "center");
     			add_location(div, file$2, 161, 10, 5514);
     			add_location(td2, file$2, 160, 8, 5498);
-    			toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
-    			toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
-    			toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
-    			toggle_class(tr, "un", /*showunattempt*/ ctx[10] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
+    			toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
+    			toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
+    			toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
+    			toggle_class(tr, "un", /*showunattempt*/ ctx[9] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
     			add_location(tr, file$2, 152, 6, 4522);
     			this.first = tr;
     		},
@@ -3906,7 +3906,7 @@ var app = (function () {
     					td1,
     					"click",
     					function () {
-    						if (is_function(/*goReview*/ ctx[15](/*i*/ ctx[30]))) /*goReview*/ ctx[15](/*i*/ ctx[30]).apply(this, arguments);
+    						if (is_function(/*goReview*/ ctx[15](/*i*/ ctx[31]))) /*goReview*/ ctx[15](/*i*/ ctx[31]).apply(this, arguments);
     					},
     					false,
     					false,
@@ -3918,17 +3918,17 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$question*/ 16384 && t0_value !== (t0_value = /*i*/ ctx[30] + 1 + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*$question*/ 16384 && t2_value !== (t2_value = JSON.parse(/*dataItem*/ ctx[28].content_text).question + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*$question*/ 8192 && t0_value !== (t0_value = /*i*/ ctx[31] + 1 + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*$question*/ 8192 && t2_value !== (t2_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "")) set_data_dev(t2, t2_value);
 
-    			if (dirty[0] & /*$question, currentselect*/ 16896) {
-    				each_value_1 = JSON.parse(/*dataItem*/ ctx[28].content_text).answers;
+    			if (dirty[0] & /*$question, $selectedanswer*/ 24576) {
+    				each_value_1 = JSON.parse(/*dataItem*/ ctx[29].content_text).answers;
     				validate_each_argument(each_value_1);
     				validate_each_keys(ctx, each_value_1, get_each_context_1$1, get_key);
     				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value_1, each_1_lookup, div, destroy_block, create_each_block_1$1, t4, get_each_context_1$1);
     			}
 
-    			if (dirty[0] & /*dummyarray, $question*/ 16512) show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question);
+    			if (dirty[0] & /*dummyarray, $question*/ 8320) show_if_2 = !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question);
 
     			if (show_if_2) {
     				if (if_block0) ; else {
@@ -3951,20 +3951,20 @@ var app = (function () {
     				}
     			}
 
-    			if (dirty[0] & /*showcorrect, questioncorrect, $question, dummyarray*/ 18576) {
-    				toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
+    			if (dirty[0] & /*showcorrect, questioncorrect, $question, dummyarray*/ 9360) {
+    				toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
     			}
 
-    			if (dirty[0] & /*showincorrect, questioncorrect, $question, dummyarray*/ 18592) {
-    				toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
+    			if (dirty[0] & /*showincorrect, questioncorrect, $question, dummyarray*/ 9376) {
+    				toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
     			}
 
-    			if (dirty[0] & /*showall, questioncorrect, $question, dummyarray*/ 18568) {
-    				toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*questioncorrect*/ ctx[11].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question)));
+    			if (dirty[0] & /*showall, questioncorrect, $question, dummyarray*/ 9352) {
+    				toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
     			}
 
-    			if (dirty[0] & /*showunattempt, dummyarray, $question*/ 17536) {
-    				toggle_class(tr, "un", /*showunattempt*/ ctx[10] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[28].content_text).question));
+    			if (dirty[0] & /*showunattempt, dummyarray, $question*/ 8832) {
+    				toggle_class(tr, "un", /*showunattempt*/ ctx[9] && /*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
     			}
     		},
     		d: function destroy(detaching) {
@@ -4055,7 +4055,7 @@ var app = (function () {
     	let div1;
     	let b1;
     	let i1;
-    	let t7_value = /*$allques*/ ctx[13].length + "";
+    	let t7_value = /*$allques*/ ctx[12].length + "";
     	let t7;
     	let t8;
     	let br1;
@@ -4117,9 +4117,9 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	let each_value = /*$question*/ ctx[14];
+    	let each_value = /*$question*/ ctx[13];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*dataItem*/ ctx[28];
+    	const get_key = ctx => /*dataItem*/ ctx[29];
     	validate_each_keys(ctx, each_value, get_each_context$1, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -4185,7 +4185,7 @@ var app = (function () {
     			t23 = text("Time Taken: ");
     			t24 = text(/*minutes*/ ctx[1]);
     			t25 = text("min :");
-    			t26 = text(/*secs*/ ctx[12]);
+    			t26 = text(/*secs*/ ctx[11]);
     			t27 = text("sec");
     			t28 = space();
     			div6 = element("div");
@@ -4367,15 +4367,15 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (!current || dirty[0] & /*result*/ 4) set_data_dev(t3, /*result*/ ctx[2]);
-    			if ((!current || dirty[0] & /*$allques*/ 8192) && t7_value !== (t7_value = /*$allques*/ ctx[13].length + "")) set_data_dev(t7, t7_value);
+    			if ((!current || dirty[0] & /*$allques*/ 4096) && t7_value !== (t7_value = /*$allques*/ ctx[12].length + "")) set_data_dev(t7, t7_value);
     			if (!current || dirty[0] & /*correctlength*/ 1) set_data_dev(t11, /*correctlength*/ ctx[0]);
     			if ((!current || dirty[0] & /*count, correctlength*/ 65) && t15_value !== (t15_value = /*count*/ ctx[6] - /*correctlength*/ ctx[0] + "")) set_data_dev(t15, t15_value);
     			if ((!current || dirty[0] & /*count*/ 64) && t19_value !== (t19_value = 11 - /*count*/ ctx[6] + "")) set_data_dev(t19, t19_value);
     			if (!current || dirty[0] & /*minutes*/ 2) set_data_dev(t24, /*minutes*/ ctx[1]);
-    			if (!current || dirty[0] & /*secs*/ 4096) set_data_dev(t26, /*secs*/ ctx[12]);
+    			if (!current || dirty[0] & /*secs*/ 2048) set_data_dev(t26, /*secs*/ ctx[11]);
 
-    			if (dirty[0] & /*showcorrect, questioncorrect, $question, dummyarray, showincorrect, showall, showunattempt, currentselect, goReview*/ 52920) {
-    				each_value = /*$question*/ ctx[14];
+    			if (dirty[0] & /*showcorrect, questioncorrect, $question, dummyarray, showincorrect, showall, showunattempt, $selectedanswer, goReview*/ 59064) {
+    				each_value = /*$question*/ ctx[13];
     				validate_each_argument(each_value);
     				validate_each_keys(ctx, each_value, get_each_context$1, get_key);
     				each_blocks = update_keyed_each(each_blocks, dirty, get_key, 1, ctx, each_value, each_1_lookup, table, destroy_block, create_each_block$1, null, get_each_context$1);
@@ -4456,16 +4456,19 @@ var app = (function () {
     	let $timetaken;
     	let $allques;
     	let $question;
+    	let $selectedanswer;
     	validate_store(disable1, 'disable1');
-    	component_subscribe($$self, disable1, $$value => $$invalidate(24, $disable1 = $$value));
+    	component_subscribe($$self, disable1, $$value => $$invalidate(25, $disable1 = $$value));
     	validate_store(disable2, 'disable2');
-    	component_subscribe($$self, disable2, $$value => $$invalidate(25, $disable2 = $$value));
+    	component_subscribe($$self, disable2, $$value => $$invalidate(26, $disable2 = $$value));
     	validate_store(timetaken, 'timetaken');
-    	component_subscribe($$self, timetaken, $$value => $$invalidate(26, $timetaken = $$value));
+    	component_subscribe($$self, timetaken, $$value => $$invalidate(27, $timetaken = $$value));
     	validate_store(allques, 'allques');
-    	component_subscribe($$self, allques, $$value => $$invalidate(13, $allques = $$value));
+    	component_subscribe($$self, allques, $$value => $$invalidate(12, $allques = $$value));
     	validate_store(question, 'question');
-    	component_subscribe($$self, question, $$value => $$invalidate(14, $question = $$value));
+    	component_subscribe($$self, question, $$value => $$invalidate(13, $question = $$value));
+    	validate_store(selectedanswer, 'selectedanswer');
+    	component_subscribe($$self, selectedanswer, $$value => $$invalidate(14, $selectedanswer = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Result', slots, []);
     	let Heading;
@@ -4542,7 +4545,7 @@ var app = (function () {
     			return items.indexOf(c) === index;
     		});
 
-    		$$invalidate(9, currentselect = [...Duplicate]);
+    		currentselect = [...Duplicate];
     	});
 
     	allincorrect.subscribe(items => {
@@ -4558,7 +4561,7 @@ var app = (function () {
     			return items.indexOf(c) === index;
     		});
 
-    		$$invalidate(11, questioncorrect = [...Duplicate]);
+    		$$invalidate(10, questioncorrect = [...Duplicate]);
     	});
 
     	const writable_props = [];
@@ -4571,25 +4574,25 @@ var app = (function () {
     		$$invalidate(3, showall = true);
     		$$invalidate(4, showcorrect = false);
     		$$invalidate(5, showincorrect = false);
-    		$$invalidate(10, showunattempt = false);
+    		$$invalidate(9, showunattempt = false);
     	};
 
     	const click_handler_1 = () => {
     		$$invalidate(4, showcorrect = true);
     		$$invalidate(5, showincorrect = false);
     		$$invalidate(3, showall = false);
-    		$$invalidate(10, showunattempt = false);
+    		$$invalidate(9, showunattempt = false);
     	};
 
     	const click_handler_2 = () => {
     		$$invalidate(5, showincorrect = true);
     		$$invalidate(4, showcorrect = false);
     		$$invalidate(3, showall = false);
-    		$$invalidate(10, showunattempt = false);
+    		$$invalidate(9, showunattempt = false);
     	};
 
     	const click_handler_3 = () => {
-    		$$invalidate(10, showunattempt = true);
+    		$$invalidate(9, showunattempt = true);
     		$$invalidate(4, showcorrect = false);
     		$$invalidate(5, showincorrect = false);
     		$$invalidate(3, showall = false);
@@ -4633,7 +4636,8 @@ var app = (function () {
     		$disable2,
     		$timetaken,
     		$allques,
-    		$question
+    		$question,
+    		$selectedanswer
     	});
 
     	$$self.$inject_state = $$props => {
@@ -4648,12 +4652,12 @@ var app = (function () {
     		if ('dummyarray' in $$props) $$invalidate(7, dummyarray = $$props.dummyarray);
     		if ('correctlength' in $$props) $$invalidate(0, correctlength = $$props.correctlength);
     		if ('review' in $$props) $$invalidate(8, review = $$props.review);
-    		if ('currentselect' in $$props) $$invalidate(9, currentselect = $$props.currentselect);
+    		if ('currentselect' in $$props) currentselect = $$props.currentselect;
     		if ('incorrect' in $$props) incorrect = $$props.incorrect;
     		if ('Current_Correct' in $$props) Current_Correct = $$props.Current_Correct;
-    		if ('showunattempt' in $$props) $$invalidate(10, showunattempt = $$props.showunattempt);
-    		if ('questioncorrect' in $$props) $$invalidate(11, questioncorrect = $$props.questioncorrect);
-    		if ('secs' in $$props) $$invalidate(12, secs = $$props.secs);
+    		if ('showunattempt' in $$props) $$invalidate(9, showunattempt = $$props.showunattempt);
+    		if ('questioncorrect' in $$props) $$invalidate(10, questioncorrect = $$props.questioncorrect);
+    		if ('secs' in $$props) $$invalidate(11, secs = $$props.secs);
     		if ('min' in $$props) min = $$props.min;
     	};
 
@@ -4681,12 +4685,12 @@ var app = (function () {
     		count,
     		dummyarray,
     		review,
-    		currentselect,
     		showunattempt,
     		questioncorrect,
     		secs,
     		$allques,
     		$question,
+    		$selectedanswer,
     		goReview,
     		click_handler,
     		click_handler_1,

@@ -161,8 +161,8 @@
         <td>
           <div class="center">
             {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
-              <span  is_correct={ans.is_correct} class="dot" class:success={(currentselect.includes(ans.answer) && ans.is_correct == 1) ||
-                ans.is_correct == 1} class:unsuccess={currentselect.includes(ans.answer) && ans.is_correct == 0} id="ans{index}"
+              <span  is_correct={ans.is_correct} class="dot" class:success={($selectedanswer.includes(ans.answer) && ans.is_correct == 1) ||
+                ans.is_correct == 1} class:unsuccess={$selectedanswer.includes(ans.answer) && ans.is_correct == 0} id="ans{index}"
                 value={ans.answer}>
                 <i>{index + 1}</i>
               </span>
