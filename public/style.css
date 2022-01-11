@@ -118,6 +118,9 @@
 
 .all-items {
   width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: 10px;
   margin-top: 12px;
   margin-left: 10px;
@@ -127,9 +130,9 @@
 }
 
 .sub-heading {
-  font-size: 14px;
+  font-size: 12px;
   margin-left: 8px;
-  margin-right: 8px;
+  margin-right: 0;
   background: #ffc0cb;
   height: 2rem;
   padding: 5px;
@@ -139,7 +142,10 @@
   background-color: #ffc0cb;
 }
 
-.heads,
+.heads {
+  margin-left: 1px;
+}
+
 .explanation,
 .numbering,
 .timer,
@@ -245,8 +251,8 @@
 }
 
 .icon {
-  top: 51%;
-  left: 46%;
+  top: 49%;
+  left: 44%;
   font-size: 100px;
   z-index: 1;
 }
@@ -631,14 +637,18 @@ tr:nth-child(even):hover  {
   height: 20rem;
 }
 
+.third {
+  width: 160px;
+  padding-right: 10px;
+}
+
 .first,
 .second,
 .third {
   padding-left: 20px;
 }
 
-.first,
-.third {
+.first{
   padding-right: 20px;
 }
 
