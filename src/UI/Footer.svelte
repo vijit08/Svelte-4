@@ -180,25 +180,25 @@
 <section class="section" class:shift={$list}>
   {#each $question as dataItem, i (dataItem)}
     {#if i == $currentitem}
-      <div class="main-question" tabindex="0">
-        <div class="number">{i + 1}.</div>
-        <div class="box">{JSON.parse(dataItem.content_text).question}</div>
+      <div class="main-question">
+        <div class="number" tabindex="0">{i + 1}.</div>
+        <div class="box" tabindex="0">{JSON.parse(dataItem.content_text).question}</div>
       </div>
       <div class="question-section" class:top-shift={($list && i == 2) || i == 2}>
         {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
-          <label for="ans{index}" id="option{index}" class="items" tabindex="0">
-            <span class="option-no">{String.fromCharCode(65 + index)}</span>
-            <input type="radio" name="ans" id="ans{index}" is_correct={ans.is_correct} value={ans.answer} class="input-items"
+          <label for="ans{index}" id="option{index}" class="items">
+            <span class="option-no" tabindex="0">{String.fromCharCode(65 + index)}</span>
+            <input type="radio"  tabindex="0" name="ans" id="ans{index}" is_correct={ans.is_correct} value={ans.answer} class="input-items"
               on:click={toggleattempt(i,JSON.parse(dataItem.content_text).question,ans.answer)}
-              bind:group={localoption[i]} tabindex="-1"/>{@html ans.answer}
+              bind:group={localoption[i]}/><span tabindex="0">{@html ans.answer}</span>
           </label>
         {/each}
       </div>
       <footer class="bottom-nav">
         <span class="buttons">
           <div class="timer">{minutes}:{seconds.toLocaleString(undefined, {minimumIntegerDigits: 2,})}</div>
-          <Button style="button" margin="btn-bottom" type="button" id="List" name="List" caption="List" on:click={lis} />
-          <Button style="button" margin="btn-bottom" type="button" id="Prev" name="Prev" caption="Previous" disabled={$disable2}
+          <Button style="button" margin="btn-bottom" type="button" id="List" name="List" caption="List" on:click={lis}/>
+          <Button style="button" margin="btn-bottom" type="button" id="Prev" name="Prev" caption="Previous" aria-disabled="true" disabled={$disable2}
             on:click={prev} />
           <div class="numbering" tabindex="0">
             <b>{i + 1} of 11</b>

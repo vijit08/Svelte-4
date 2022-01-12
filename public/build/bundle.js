@@ -1705,6 +1705,7 @@ var app = (function () {
     				id: "Prev",
     				name: "Prev",
     				caption: "Previous",
+    				"aria-disabled": "true",
     				disabled: /*$disable2*/ ctx[6]
     			},
     			$$inline: true
@@ -1783,25 +1784,26 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t17 = space();
     			attr_dev(div0, "class", "number");
-    			add_location(div0, file$4, 183, 8, 5706);
+    			attr_dev(div0, "tabindex", "0");
+    			add_location(div0, file$4, 183, 8, 5693);
     			attr_dev(div1, "class", "box");
+    			attr_dev(div1, "tabindex", "0");
     			add_location(div1, file$4, 184, 8, 5750);
     			attr_dev(div2, "class", "main-question");
-    			attr_dev(div2, "tabindex", "0");
     			add_location(div2, file$4, 182, 6, 5656);
     			attr_dev(div3, "class", "question-section");
     			toggle_class(div3, "top-shift", /*$list*/ ctx[3] && /*i*/ ctx[34] == 2 || /*i*/ ctx[34] == 2);
-    			add_location(div3, file$4, 186, 6, 5839);
+    			add_location(div3, file$4, 186, 6, 5852);
     			attr_dev(div4, "class", "timer");
-    			add_location(div4, file$4, 198, 10, 6585);
-    			add_location(b, file$4, 203, 12, 7030);
+    			add_location(div4, file$4, 198, 10, 6624);
+    			add_location(b, file$4, 203, 12, 7089);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$4, 202, 10, 6980);
+    			add_location(div5, file$4, 202, 10, 7039);
     			attr_dev(span, "class", "buttons");
-    			add_location(span, file$4, 197, 8, 6551);
+    			add_location(span, file$4, 197, 8, 6590);
     			attr_dev(footer, "class", "bottom-nav");
-    			add_location(footer, file$4, 196, 6, 6514);
+    			add_location(footer, file$4, 196, 6, 6553);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -1939,7 +1941,7 @@ var app = (function () {
     // (188:8) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
     function create_each_block_1$3(key_1, ctx) {
     	let label;
-    	let span;
+    	let span0;
     	let t0_value = String.fromCharCode(65 + /*index*/ ctx[37]) + "";
     	let t0;
     	let t1;
@@ -1947,7 +1949,7 @@ var app = (function () {
     	let input_id_value;
     	let input_is_correct_value;
     	let input_value_value;
-    	let html_tag;
+    	let span1;
     	let raw_value = /*ans*/ ctx[35].answer + "";
     	let t2;
     	let label_for_value;
@@ -1965,40 +1967,42 @@ var app = (function () {
     		first: null,
     		c: function create() {
     			label = element("label");
-    			span = element("span");
+    			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
     			input = element("input");
-    			html_tag = new HtmlTag();
+    			span1 = element("span");
     			t2 = space();
-    			attr_dev(span, "class", "option-no");
-    			add_location(span, file$4, 189, 12, 6090);
+    			attr_dev(span0, "class", "option-no");
+    			attr_dev(span0, "tabindex", "0");
+    			add_location(span0, file$4, 189, 12, 6090);
     			attr_dev(input, "type", "radio");
+    			attr_dev(input, "tabindex", "0");
     			attr_dev(input, "name", "ans");
     			attr_dev(input, "id", input_id_value = "ans" + /*index*/ ctx[37]);
     			attr_dev(input, "is_correct", input_is_correct_value = /*ans*/ ctx[35].is_correct);
     			input.__value = input_value_value = /*ans*/ ctx[35].answer;
     			input.value = input.__value;
     			attr_dev(input, "class", "input-items");
-    			attr_dev(input, "tabindex", "-1");
     			/*$$binding_groups*/ ctx[15][0][/*i*/ ctx[34]].push(input);
-    			add_location(input, file$4, 190, 12, 6168);
-    			html_tag.a = t2;
+    			add_location(input, file$4, 190, 12, 6181);
+    			attr_dev(span1, "tabindex", "0");
+    			add_location(span1, file$4, 192, 43, 6450);
     			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[37]);
     			attr_dev(label, "id", label_id_value = "option" + /*index*/ ctx[37]);
     			attr_dev(label, "class", "items");
-    			attr_dev(label, "tabindex", "0");
-    			add_location(label, file$4, 188, 10, 6006);
+    			add_location(label, file$4, 188, 10, 6019);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
-    			append_dev(label, span);
-    			append_dev(span, t0);
+    			append_dev(label, span0);
+    			append_dev(span0, t0);
     			append_dev(label, t1);
     			append_dev(label, input);
     			input.checked = input.__value === /*localoption*/ ctx[0][/*i*/ ctx[34]];
-    			html_tag.m(raw_value, label);
+    			append_dev(label, span1);
+    			span1.innerHTML = raw_value;
     			append_dev(label, t2);
 
     			if (!mounted) {
@@ -2040,8 +2044,7 @@ var app = (function () {
     				input.checked = input.__value === /*localoption*/ ctx[0][/*i*/ ctx[34]];
     			}
 
-    			if (dirty[0] & /*$question*/ 16 && raw_value !== (raw_value = /*ans*/ ctx[35].answer + "")) html_tag.p(raw_value);
-
+    			if (dirty[0] & /*$question*/ 16 && raw_value !== (raw_value = /*ans*/ ctx[35].answer + "")) span1.innerHTML = raw_value;
     			if (dirty[0] & /*$question*/ 16 && label_for_value !== (label_for_value = "ans" + /*index*/ ctx[37])) {
     				attr_dev(label, "for", label_for_value);
     			}

@@ -136,6 +136,7 @@
   background: #ffc0cb;
   height: 2rem;
   padding: 5px;
+  width: 18vw;
 }
 
 .sub-heading:hover {
@@ -143,7 +144,11 @@
 }
 
 .heads {
-  margin-left: 1px;
+  margin-left: 0;
+  left: 0;
+  width: fit-content;
+  position: relative;
+  flex-direction: column;
 }
 
 .explanation,
@@ -156,7 +161,6 @@
   margin-left: 20px;
 }
 
-.heads,
 .buttons,
 .container {
   flex-direction: row;
@@ -262,7 +266,7 @@
 }
 
 .main-question {
-  left: 6.4vw;
+  left: 5.9vw;
   margin-top: 10px;
 }
 
