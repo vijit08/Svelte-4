@@ -768,7 +768,7 @@ var app = (function () {
 
     const file$6 = "src\\UI\\Button.svelte";
 
-    // (17:0) {:else}
+    // (18:0) {:else}
     function create_else_block$1(ctx) {
     	let button;
     	let t;
@@ -786,15 +786,16 @@ var app = (function () {
     			attr_dev(button, "name", /*name*/ ctx[8]);
     			button.disabled = /*disabled*/ ctx[6];
     			attr_dev(button, "aria-label", /*caption*/ ctx[1]);
+    			attr_dev(button, "accesskey", /*accesskey*/ ctx[10]);
     			attr_dev(button, "tabindex", "0");
-    			add_location(button, file$6, 17, 2, 399);
+    			add_location(button, file$6, 18, 2, 429);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
     			append_dev(button, t);
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[10], false, false, false);
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[11], false, false, false);
     				mounted = true;
     			}
     		},
@@ -824,6 +825,10 @@ var app = (function () {
     			if (dirty & /*caption*/ 2) {
     				attr_dev(button, "aria-label", /*caption*/ ctx[1]);
     			}
+
+    			if (dirty & /*accesskey*/ 1024) {
+    				attr_dev(button, "accesskey", /*accesskey*/ ctx[10]);
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(button);
@@ -836,14 +841,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(17:0) {:else}",
+    		source: "(18:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (15:0) {#if href}
+    // (16:0) {#if href}
     function create_if_block$5(ctx) {
     	let a;
     	let t;
@@ -854,7 +859,7 @@ var app = (function () {
     			t = text(/*caption*/ ctx[1]);
     			attr_dev(a, "class", "link");
     			attr_dev(a, "href", /*href*/ ctx[2]);
-    			add_location(a, file$6, 15, 2, 350);
+    			add_location(a, file$6, 16, 2, 380);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, a, anchor);
@@ -876,7 +881,7 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(15:0) {#if href}",
+    		source: "(16:0) {#if href}",
     		ctx
     	});
 
@@ -904,7 +909,7 @@ var app = (function () {
     			if_block_anchor = empty();
     			attr_dev(link, "rel", "stylesheet");
     			attr_dev(link, "href", "style.css");
-    			add_location(link, file$6, 13, 0, 294);
+    			add_location(link, file$6, 14, 0, 324);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -962,6 +967,7 @@ var app = (function () {
     	let { id = null } = $$props;
     	let { name = null } = $$props;
     	let { margin = null } = $$props;
+    	let { accesskey = null } = $$props;
 
     	const writable_props = [
     		'type',
@@ -973,7 +979,8 @@ var app = (function () {
     		'disabled',
     		'id',
     		'name',
-    		'margin'
+    		'margin',
+    		'accesskey'
     	];
 
     	Object.keys($$props).forEach(key => {
@@ -995,6 +1002,7 @@ var app = (function () {
     		if ('id' in $$props) $$invalidate(7, id = $$props.id);
     		if ('name' in $$props) $$invalidate(8, name = $$props.name);
     		if ('margin' in $$props) $$invalidate(9, margin = $$props.margin);
+    		if ('accesskey' in $$props) $$invalidate(10, accesskey = $$props.accesskey);
     	};
 
     	$$self.$capture_state = () => ({
@@ -1007,7 +1015,8 @@ var app = (function () {
     		disabled,
     		id,
     		name,
-    		margin
+    		margin,
+    		accesskey
     	});
 
     	$$self.$inject_state = $$props => {
@@ -1021,6 +1030,7 @@ var app = (function () {
     		if ('id' in $$props) $$invalidate(7, id = $$props.id);
     		if ('name' in $$props) $$invalidate(8, name = $$props.name);
     		if ('margin' in $$props) $$invalidate(9, margin = $$props.margin);
+    		if ('accesskey' in $$props) $$invalidate(10, accesskey = $$props.accesskey);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1038,6 +1048,7 @@ var app = (function () {
     		id,
     		name,
     		margin,
+    		accesskey,
     		click_handler
     	];
     }
@@ -1056,7 +1067,8 @@ var app = (function () {
     			disabled: 6,
     			id: 7,
     			name: 8,
-    			margin: 9
+    			margin: 9,
+    			accesskey: 10
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -1151,6 +1163,14 @@ var app = (function () {
     	}
 
     	set margin(value) {
+    		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get accesskey() {
+    		throw new Error("<Button>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set accesskey(value) {
     		throw new Error("<Button>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -1254,6 +1274,7 @@ var app = (function () {
     				style: "button",
     				id: "close",
     				name: "Close",
+    				accesskey: "c",
     				caption: "Close"
     			},
     			$$inline: true
@@ -1267,6 +1288,7 @@ var app = (function () {
     				style: "button",
     				id: "confirm",
     				name: "Confirm",
+    				accesskey: "r",
     				caption: "Confirm"
     			},
     			$$inline: true
@@ -1284,7 +1306,7 @@ var app = (function () {
     			attr_dev(div0, "class", "btn-primary");
     			add_location(div0, file$5, 76, 6, 2163);
     			attr_dev(div1, "class", "btn-primary");
-    			add_location(div1, file$5, 79, 6, 2320);
+    			add_location(div1, file$5, 79, 6, 2332);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -1690,6 +1712,7 @@ var app = (function () {
     				type: "button",
     				id: "List",
     				name: "List",
+    				accesskey: "l",
     				caption: "List"
     			},
     			$$inline: true
@@ -1704,6 +1727,7 @@ var app = (function () {
     				type: "button",
     				id: "Prev",
     				name: "Prev",
+    				accesskey: "p",
     				caption: "Previous",
     				"aria-disabled": "true",
     				disabled: /*$disable2*/ ctx[6]
@@ -1720,6 +1744,7 @@ var app = (function () {
     				type: "button",
     				id: "Next",
     				name: "Next",
+    				accesskey: "n",
     				caption: "Next",
     				disabled: /*$disable1*/ ctx[7]
     			},
@@ -1735,6 +1760,7 @@ var app = (function () {
     				type: "button",
     				id: "End",
     				name: "End",
+    				accesskey: "t",
     				caption: "End Test"
     			},
     			$$inline: true
@@ -1796,10 +1822,10 @@ var app = (function () {
     			add_location(div3, file$4, 186, 6, 5852);
     			attr_dev(div4, "class", "timer");
     			add_location(div4, file$4, 198, 10, 6624);
-    			add_location(b, file$4, 203, 12, 7089);
+    			add_location(b, file$4, 203, 12, 7113);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$4, 202, 10, 7039);
+    			add_location(div5, file$4, 202, 10, 7063);
     			attr_dev(span, "class", "buttons");
     			add_location(span, file$4, 197, 8, 6590);
     			attr_dev(footer, "class", "bottom-nav");
@@ -2675,6 +2701,7 @@ var app = (function () {
     				type: "button",
     				id: "prev",
     				name: "prev",
+    				accesskey: "p",
     				caption: "Previous",
     				disabled: /*$disable2*/ ctx[6]
     			},
@@ -2690,6 +2717,7 @@ var app = (function () {
     				type: "button",
     				id: "next",
     				name: "next",
+    				accesskey: "n",
     				caption: "Next",
     				disabled: /*$disable1*/ ctx[7]
     			},
@@ -2705,6 +2733,7 @@ var app = (function () {
     				type: "button",
     				id: "dash",
     				name: "dash",
+    				accesskey: "b",
     				caption: "DashBoard"
     			},
     			$$inline: true
@@ -2757,10 +2786,10 @@ var app = (function () {
     			attr_dev(div4, "class", "explanation");
     			attr_dev(div4, "tabindex", "0");
     			add_location(div4, file$3, 106, 8, 3189);
-    			add_location(b, file$3, 119, 12, 3749);
+    			add_location(b, file$3, 119, 12, 3761);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$3, 118, 10, 3699);
+    			add_location(div5, file$3, 118, 10, 3711);
     			attr_dev(div6, "class", "bottom-nav");
     			add_location(div6, file$3, 115, 8, 3502);
     		},
@@ -3614,14 +3643,14 @@ var app = (function () {
     			span = element("span");
     			i = element("i");
     			t = text(t_value);
-    			add_location(i, file$2, 166, 16, 5946);
+    			add_location(i, file$2, 166, 16, 5962);
     			attr_dev(span, "is_correct", span_is_correct_value = /*ans*/ ctx[32].is_correct);
     			attr_dev(span, "class", "dot");
     			attr_dev(span, "id", span_id_value = "ans" + /*index*/ ctx[34]);
     			attr_dev(span, "value", span_value_value = /*ans*/ ctx[32].answer);
     			toggle_class(span, "success", /*$selectedanswer*/ ctx[14].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 1 || /*ans*/ ctx[32].is_correct == 1);
     			toggle_class(span, "unsuccess", /*$selectedanswer*/ ctx[14].includes(/*ans*/ ctx[32].answer) && /*ans*/ ctx[32].is_correct == 0);
-    			add_location(span, file$2, 163, 14, 5633);
+    			add_location(span, file$2, 163, 14, 5649);
     			this.first = span;
     		},
     		m: function mount(target, anchor) {
@@ -3684,11 +3713,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Unattempted";
     			attr_dev(i, "class", "fa fa-eye-slash top");
-    			add_location(i, file$2, 171, 16, 6147);
+    			add_location(i, file$2, 171, 16, 6163);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 172, 16, 6198);
+    			add_location(span, file$2, 172, 16, 6214);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 170, 14, 6108);
+    			add_location(div, file$2, 170, 14, 6124);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3727,11 +3756,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Incorrect";
     			attr_dev(i, "class", "fa fa-close");
-    			add_location(i, file$2, 182, 16, 6814);
+    			add_location(i, file$2, 182, 16, 6830);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 183, 16, 6857);
+    			add_location(span, file$2, 183, 16, 6873);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 181, 14, 6775);
+    			add_location(div, file$2, 181, 14, 6791);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3770,11 +3799,11 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Correct";
     			attr_dev(i, "class", "fa fa-check");
-    			add_location(i, file$2, 177, 16, 6493);
+    			add_location(i, file$2, 177, 16, 6509);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 178, 16, 6536);
+    			add_location(span, file$2, 178, 16, 6552);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 176, 14, 6454);
+    			add_location(div, file$2, 176, 14, 6470);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3808,6 +3837,7 @@ var app = (function () {
     	let td1;
     	let t2_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "";
     	let t2;
+    	let td1_accesskey_value;
     	let t3;
     	let td2;
     	let div;
@@ -3872,10 +3902,11 @@ var app = (function () {
     			add_location(td0, file$2, 158, 8, 5330);
     			attr_dev(td1, "id", "questions");
     			attr_dev(td1, "tabindex", "0");
+    			attr_dev(td1, "accesskey", td1_accesskey_value = /*i*/ ctx[31] + 1);
     			add_location(td1, file$2, 159, 8, 5384);
     			attr_dev(div, "class", "center");
-    			add_location(div, file$2, 161, 10, 5514);
-    			add_location(td2, file$2, 160, 8, 5498);
+    			add_location(div, file$2, 161, 10, 5530);
+    			add_location(td2, file$2, 160, 8, 5514);
     			toggle_class(tr, "hidecorrect", /*showcorrect*/ ctx[4] && (!/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
     			toggle_class(tr, "hideincorrect", /*showincorrect*/ ctx[5] && (/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
     			toggle_class(tr, "show", /*showall*/ ctx[3] && (/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) || !/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question)));
@@ -3923,6 +3954,10 @@ var app = (function () {
     			ctx = new_ctx;
     			if (dirty[0] & /*$question*/ 8192 && t0_value !== (t0_value = /*i*/ ctx[31] + 1 + "")) set_data_dev(t0, t0_value);
     			if (dirty[0] & /*$question*/ 8192 && t2_value !== (t2_value = JSON.parse(/*dataItem*/ ctx[29].content_text).question + "")) set_data_dev(t2, t2_value);
+
+    			if (dirty[0] & /*$question*/ 8192 && td1_accesskey_value !== (td1_accesskey_value = /*i*/ ctx[31] + 1)) {
+    				attr_dev(td1, "accesskey", td1_accesskey_value);
+    			}
 
     			if (dirty[0] & /*$question, $selectedanswer*/ 24576) {
     				each_value_1 = JSON.parse(/*dataItem*/ ctx[29].content_text).answers;
@@ -5955,6 +5990,7 @@ var app = (function () {
     				type: "button",
     				id: "Start",
     				name: "Start",
+    				accesskey: "s",
     				caption: "Start Test"
     			},
     			$$inline: true

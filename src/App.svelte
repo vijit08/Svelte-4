@@ -93,7 +93,7 @@
       <Button class="success" type="button" id="Start" name="Start" caption="Start Test" on:click={tooglestartpage} />
       <Result on:res={review} />
     {:else}
-      <Button style="button" margin="btn" type="button" id="Start" name="Start" caption="Start Test" on:click={tooglestartpage} />
+      <Button style="button" margin="btn" type="button" id="Start" name="Start" accesskey=s caption="Start Test" on:click={tooglestartpage} />
     {/if}
 
   {:else if !$startpage}

@@ -157,7 +157,7 @@
         JSON.parse(dataItem.content_text).question) || !dummyarray.includes(JSON.parse(dataItem.content_text).question) ||
         !dummyarray.includes(JSON.parse(dataItem.content_text).question))} class:un={showunattempt && dummyarray.includes(JSON.parse(dataItem.content_text).question)}>
         <td class="center" tabindex="0">{i + 1}</td>
-        <td id="questions" tabindex="0" on:click={goReview(i)}>{JSON.parse(dataItem.content_text).question}</td>
+        <td id="questions" tabindex="0" accesskey={i+1} on:click={goReview(i)}>{JSON.parse(dataItem.content_text).question}</td>
         <td>
           <div class="center">
             {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}

@@ -197,15 +197,15 @@
       <footer class="bottom-nav">
         <span class="buttons">
           <div class="timer">{minutes}:{seconds.toLocaleString(undefined, {minimumIntegerDigits: 2,})}</div>
-          <Button style="button" margin="btn-bottom" type="button" id="List" name="List" caption="List" on:click={lis}/>
-          <Button style="button" margin="btn-bottom" type="button" id="Prev" name="Prev" caption="Previous" aria-disabled="true" disabled={$disable2}
+          <Button style="button" margin="btn-bottom" type="button" id="List" name="List" accesskey=l caption="List" on:click={lis}/>
+          <Button style="button" margin="btn-bottom" type="button" id="Prev" name="Prev" accesskey=p caption="Previous" aria-disabled="true" disabled={$disable2}
             on:click={prev} />
           <div class="numbering" tabindex="0">
             <b>{i + 1} of 11</b>
           </div>
-          <Button style="button" margin="btn-bottom" type="button" id="Next" name="Next" caption="Next" disabled={$disable1}
+          <Button style="button" margin="btn-bottom" type="button" id="Next" name="Next" accesskey=n caption="Next" disabled={$disable1}
             on:click={next} />
-          <Button style="button" margin="btn-bottom" type="button" id="End" name="End" caption="End Test" on:click on:click={end}
+          <Button style="button" margin="btn-bottom" type="button" id="End" name="End"  accesskey=t caption="End Test" on:click on:click={end}
             />
         </span>
         {#if $isopen}
