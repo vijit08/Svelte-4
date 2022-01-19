@@ -164,23 +164,27 @@
               <span  is_correct={ans.is_correct} class="dot" class:success={($selectedanswer.includes(ans.answer) && ans.is_correct == 1) ||
                 ans.is_correct == 1} class:unsuccess={$selectedanswer.includes(ans.answer) && ans.is_correct == 0} id="ans{index}"
                 value={ans.answer}>
-                <i>{index + 1}</i>
+                {#if ans.is_correct==1}
+                  <span tabindex="0" role="button" aria-label="Option{index+1} is Correct">{index + 1}</span>
+                {:else if ans.is_correct==0}
+                  <span tabindex="0" role="button" aria-label="Option{index+1} is InCorrect">{index + 1}</span>
+                {/if}
               </span>
             {/each}
             {#if !dummyarray.includes(JSON.parse(dataItem.content_text).question)}
               <div class="tooltip">
-                <i class="fa fa-eye-slash top" />
+                <i class="fa fa-eye-slash top" tabindex="0" role="button" aria-label="Unattempted" />
                 <span class="tooltiptext">Unattempted</span>
               </div>
             {/if}
             {#if dummyarray.includes(JSON.parse(dataItem.content_text).question) && questioncorrect.includes(JSON.parse(dataItem.content_text).question)}
               <div class="tooltip">
-                <i class="fa fa-check" />
+                <i class="fa fa-check" tabindex="0" role="button" aria-label="correct" />
                 <span class="tooltiptext">Correct</span>
               </div>
             {:else if dummyarray.includes(JSON.parse(dataItem.content_text).question) && !questioncorrect.includes(JSON.parse(dataItem.content_text).question)}
               <div class="tooltip">
-                <i class="fa fa-close" />
+                <i class="fa fa-close" tabindex="0" role="button" aria-label="incorrect"/>
                 <span class="tooltiptext">Incorrect</span>
               </div>
             {/if}

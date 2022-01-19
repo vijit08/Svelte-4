@@ -2774,24 +2774,25 @@ var app = (function () {
     			create_component(button2.$$.fragment);
     			t12 = space();
     			attr_dev(div0, "class", "number");
+    			attr_dev(div0, "tabindex", "0");
     			add_location(div0, file$3, 92, 10, 2177);
     			attr_dev(div1, "class", "box");
     			attr_dev(div1, "tabindex", "0");
-    			add_location(div1, file$3, 93, 10, 2223);
+    			add_location(div1, file$3, 93, 10, 2236);
     			attr_dev(div2, "class", "review-question");
     			add_location(div2, file$3, 91, 8, 2136);
     			attr_dev(div3, "class", "review-question-section");
     			toggle_class(div3, "top-shift", /*i*/ ctx[16] == 2);
-    			add_location(div3, file$3, 95, 8, 2329);
+    			add_location(div3, file$3, 95, 8, 2342);
     			attr_dev(div4, "class", "explanation");
     			attr_dev(div4, "tabindex", "0");
-    			add_location(div4, file$3, 106, 8, 3189);
-    			add_location(b, file$3, 119, 12, 3761);
+    			add_location(div4, file$3, 108, 8, 3409);
+    			add_location(b, file$3, 121, 12, 3981);
     			attr_dev(div5, "class", "numbering");
     			attr_dev(div5, "tabindex", "0");
-    			add_location(div5, file$3, 118, 10, 3711);
+    			add_location(div5, file$3, 120, 10, 3931);
     			attr_dev(div6, "class", "bottom-nav");
-    			add_location(div6, file$3, 115, 8, 3502);
+    			add_location(div6, file$3, 117, 8, 3722);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -2897,6 +2898,7 @@ var app = (function () {
     // (97:10) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
     function create_each_block_2$1(key_1, ctx) {
     	let label;
+    	let span0;
     	let t0_value = String.fromCharCode(65 + /*index*/ ctx[19]) + "";
     	let t0;
     	let t1;
@@ -2907,9 +2909,11 @@ var app = (function () {
     	let input_checked_value;
     	let t2;
     	let div;
-    	let html_tag;
-    	let raw_value = /*ans*/ ctx[20].answer + "";
+    	let div_aria_label_value;
     	let t3;
+    	let span1;
+    	let raw_value = /*ans*/ ctx[20].answer + "";
+    	let t4;
     	let label_for_value;
     	let label_id_value;
 
@@ -2918,14 +2922,19 @@ var app = (function () {
     		first: null,
     		c: function create() {
     			label = element("label");
+    			span0 = element("span");
     			t0 = text(t0_value);
     			t1 = space();
     			input = element("input");
     			t2 = space();
     			div = element("div");
-    			html_tag = new HtmlTag();
     			t3 = space();
+    			span1 = element("span");
+    			t4 = space();
+    			attr_dev(span0, "tabindex", "0");
+    			add_location(span0, file$3, 99, 14, 2709);
     			attr_dev(input, "class", "radio_input");
+    			attr_dev(input, "tabindex", "0");
     			attr_dev(input, "type", "radio");
     			attr_dev(input, "name", "ans");
     			attr_dev(input, "id", input_id_value = "ans" + /*index*/ ctx[19]);
@@ -2937,29 +2946,40 @@ var app = (function () {
     			: false;
 
     			input.disabled = "disabled";
-    			add_location(input, file$3, 99, 14, 2728);
+    			add_location(input, file$3, 100, 14, 2784);
+    			attr_dev(div, "tabindex", "0");
+    			attr_dev(div, "role", "textbox");
+
+    			attr_dev(div, "aria-label", div_aria_label_value = /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 1
+    			? "OPTION IS CORRECT"
+    			: "OPTION IS INCORRECT");
+
     			toggle_class(div, "radio_radio", /*ans*/ ctx[20].is_correct == 1 || /*ans*/ ctx[20].answer);
     			toggle_class(div, "wrong", /*$selectedanswer*/ ctx[5][/*i*/ ctx[16]] == /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 0);
-    			add_location(div, file$3, 101, 16, 2957);
-    			html_tag.a = t3;
-    			attr_dev(label, "tabindex", "0");
+    			add_location(div, file$3, 102, 14, 3024);
+    			attr_dev(span1, "tabindex", "0");
+    			add_location(span1, file$3, 104, 14, 3298);
+    			attr_dev(label, "tabindex", "-1");
     			attr_dev(label, "for", label_for_value = "ans" + /*index*/ ctx[19]);
     			attr_dev(label, "id", label_id_value = "option" + /*index*/ ctx[19]);
     			attr_dev(label, "class", "radio");
     			toggle_class(label, "bold", /*ans*/ ctx[20].is_correct == 1);
     			toggle_class(label, "not-bold", /*currentselect*/ ctx[3].includes(/*ans*/ ctx[20].answer) && /*ans*/ ctx[20].is_correct == 0);
-    			add_location(label, file$3, 97, 12, 2486);
+    			add_location(label, file$3, 97, 12, 2499);
     			this.first = label;
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, label, anchor);
-    			append_dev(label, t0);
+    			append_dev(label, span0);
+    			append_dev(span0, t0);
     			append_dev(label, t1);
     			append_dev(label, input);
     			append_dev(label, t2);
     			append_dev(label, div);
-    			html_tag.m(raw_value, label);
     			append_dev(label, t3);
+    			append_dev(label, span1);
+    			span1.innerHTML = raw_value;
+    			append_dev(label, t4);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
@@ -2983,6 +3003,12 @@ var app = (function () {
     				prop_dev(input, "checked", input_checked_value);
     			}
 
+    			if (dirty & /*$question*/ 4 && div_aria_label_value !== (div_aria_label_value = /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 1
+    			? "OPTION IS CORRECT"
+    			: "OPTION IS INCORRECT")) {
+    				attr_dev(div, "aria-label", div_aria_label_value);
+    			}
+
     			if (dirty & /*JSON, $question*/ 4) {
     				toggle_class(div, "radio_radio", /*ans*/ ctx[20].is_correct == 1 || /*ans*/ ctx[20].answer);
     			}
@@ -2991,8 +3017,7 @@ var app = (function () {
     				toggle_class(div, "wrong", /*$selectedanswer*/ ctx[5][/*i*/ ctx[16]] == /*ans*/ ctx[20].answer && /*ans*/ ctx[20].is_correct == 0);
     			}
 
-    			if (dirty & /*$question*/ 4 && raw_value !== (raw_value = /*ans*/ ctx[20].answer + "")) html_tag.p(raw_value);
-
+    			if (dirty & /*$question*/ 4 && raw_value !== (raw_value = /*ans*/ ctx[20].answer + "")) span1.innerHTML = raw_value;
     			if (dirty & /*$question*/ 4 && label_for_value !== (label_for_value = "ans" + /*index*/ ctx[19])) {
     				attr_dev(label, "for", label_for_value);
     			}
@@ -3025,7 +3050,7 @@ var app = (function () {
     	return block;
     }
 
-    // (108:10) {#if explain}
+    // (110:10) {#if explain}
     function create_if_block_2$3(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
@@ -3077,14 +3102,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(108:10) {#if explain}",
+    		source: "(110:10) {#if explain}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (110:14) {#if answers.is_correct == 1}
+    // (112:14) {#if answers.is_correct == 1}
     function create_if_block_3$3(ctx) {
     	let html_tag;
     	let html_anchor;
@@ -3112,14 +3137,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$3.name,
     		type: "if",
-    		source: "(110:14) {#if answers.is_correct == 1}",
+    		source: "(112:14) {#if answers.is_correct == 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (109:12) {#each JSON.parse(dataItem.content_text).answers as answers, index (answers)}
+    // (111:12) {#each JSON.parse(dataItem.content_text).answers as answers, index (answers)}
     function create_each_block_1$2(key_1, ctx) {
     	let first;
     	let if_block_anchor;
@@ -3166,7 +3191,7 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(109:12) {#each JSON.parse(dataItem.content_text).answers as answers, index (answers)}",
+    		source: "(111:12) {#each JSON.parse(dataItem.content_text).answers as answers, index (answers)}",
     		ctx
     	});
 
@@ -3248,7 +3273,7 @@ var app = (function () {
     	return block;
     }
 
-    // (129:2) {#if home}
+    // (131:2) {#if home}
     function create_if_block$3(ctx) {
     	let app;
     	let current;
@@ -3280,7 +3305,7 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(129:2) {#if home}",
+    		source: "(131:2) {#if home}",
     		ctx
     	});
 
@@ -3626,24 +3651,113 @@ var app = (function () {
     	return child_ctx;
     }
 
+    // (169:44) 
+    function create_if_block_5$1(ctx) {
+    	let span;
+    	let t_value = /*index*/ ctx[34] + 1 + "";
+    	let t;
+    	let span_aria_label_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "tabindex", "0");
+    			attr_dev(span, "role", "button");
+    			attr_dev(span, "aria-label", span_aria_label_value = "Option" + (/*index*/ ctx[34] + 1) + " is InCorrect");
+    			add_location(span, file$2, 169, 18, 6162);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*$question*/ 8192 && t_value !== (t_value = /*index*/ ctx[34] + 1 + "")) set_data_dev(t, t_value);
+
+    			if (dirty[0] & /*$question*/ 8192 && span_aria_label_value !== (span_aria_label_value = "Option" + (/*index*/ ctx[34] + 1) + " is InCorrect")) {
+    				attr_dev(span, "aria-label", span_aria_label_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5$1.name,
+    		type: "if",
+    		source: "(169:44) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (167:16) {#if ans.is_correct==1}
+    function create_if_block_4$2(ctx) {
+    	let span;
+    	let t_value = /*index*/ ctx[34] + 1 + "";
+    	let t;
+    	let span_aria_label_value;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "tabindex", "0");
+    			attr_dev(span, "role", "button");
+    			attr_dev(span, "aria-label", span_aria_label_value = "Option" + (/*index*/ ctx[34] + 1) + " is Correct");
+    			add_location(span, file$2, 167, 18, 6005);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*$question*/ 8192 && t_value !== (t_value = /*index*/ ctx[34] + 1 + "")) set_data_dev(t, t_value);
+
+    			if (dirty[0] & /*$question*/ 8192 && span_aria_label_value !== (span_aria_label_value = "Option" + (/*index*/ ctx[34] + 1) + " is Correct")) {
+    				attr_dev(span, "aria-label", span_aria_label_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_4$2.name,
+    		type: "if",
+    		source: "(167:16) {#if ans.is_correct==1}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     // (163:12) {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
     function create_each_block_1$1(key_1, ctx) {
     	let span;
-    	let i;
-    	let t_value = /*index*/ ctx[34] + 1 + "";
-    	let t;
     	let span_is_correct_value;
     	let span_id_value;
     	let span_value_value;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*ans*/ ctx[32].is_correct == 1) return create_if_block_4$2;
+    		if (/*ans*/ ctx[32].is_correct == 0) return create_if_block_5$1;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type && current_block_type(ctx);
 
     	const block = {
     		key: key_1,
     		first: null,
     		c: function create() {
     			span = element("span");
-    			i = element("i");
-    			t = text(t_value);
-    			add_location(i, file$2, 166, 16, 5962);
+    			if (if_block) if_block.c();
     			attr_dev(span, "is_correct", span_is_correct_value = /*ans*/ ctx[32].is_correct);
     			attr_dev(span, "class", "dot");
     			attr_dev(span, "id", span_id_value = "ans" + /*index*/ ctx[34]);
@@ -3655,12 +3769,22 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
-    			append_dev(span, i);
-    			append_dev(i, t);
+    			if (if_block) if_block.m(span, null);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*$question*/ 8192 && t_value !== (t_value = /*index*/ ctx[34] + 1 + "")) set_data_dev(t, t_value);
+
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if (if_block) if_block.d(1);
+    				if_block = current_block_type && current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(span, null);
+    				}
+    			}
 
     			if (dirty[0] & /*$question*/ 8192 && span_is_correct_value !== (span_is_correct_value = /*ans*/ ctx[32].is_correct)) {
     				attr_dev(span, "is_correct", span_is_correct_value);
@@ -3684,6 +3808,10 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(span);
+
+    			if (if_block) {
+    				if_block.d();
+    			}
     		}
     	};
 
@@ -3698,7 +3826,7 @@ var app = (function () {
     	return block;
     }
 
-    // (170:12) {#if !dummyarray.includes(JSON.parse(dataItem.content_text).question)}
+    // (174:12) {#if !dummyarray.includes(JSON.parse(dataItem.content_text).question)}
     function create_if_block_3$2(ctx) {
     	let div;
     	let i;
@@ -3713,11 +3841,14 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Unattempted";
     			attr_dev(i, "class", "fa fa-eye-slash top");
-    			add_location(i, file$2, 171, 16, 6163);
+    			attr_dev(i, "tabindex", "0");
+    			attr_dev(i, "role", "button");
+    			attr_dev(i, "aria-label", "Unattempted");
+    			add_location(i, file$2, 175, 16, 6461);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 172, 16, 6214);
+    			add_location(span, file$2, 176, 16, 6564);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 170, 14, 6124);
+    			add_location(div, file$2, 174, 14, 6422);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3734,14 +3865,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$2.name,
     		type: "if",
-    		source: "(170:12) {#if !dummyarray.includes(JSON.parse(dataItem.content_text).question)}",
+    		source: "(174:12) {#if !dummyarray.includes(JSON.parse(dataItem.content_text).question)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (181:159) 
+    // (185:159) 
     function create_if_block_2$2(ctx) {
     	let div;
     	let i;
@@ -3756,11 +3887,14 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Incorrect";
     			attr_dev(i, "class", "fa fa-close");
-    			add_location(i, file$2, 182, 16, 6830);
+    			attr_dev(i, "tabindex", "0");
+    			attr_dev(i, "role", "button");
+    			attr_dev(i, "aria-label", "incorrect");
+    			add_location(i, file$2, 186, 16, 7228);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 183, 16, 6873);
+    			add_location(span, file$2, 187, 16, 7320);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 181, 14, 6791);
+    			add_location(div, file$2, 185, 14, 7189);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3777,14 +3911,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$2.name,
     		type: "if",
-    		source: "(181:159) ",
+    		source: "(185:159) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (176:12) {#if dummyarray.includes(JSON.parse(dataItem.content_text).question) && questioncorrect.includes(JSON.parse(dataItem.content_text).question)}
+    // (180:12) {#if dummyarray.includes(JSON.parse(dataItem.content_text).question) && questioncorrect.includes(JSON.parse(dataItem.content_text).question)}
     function create_if_block_1$2(ctx) {
     	let div;
     	let i;
@@ -3799,11 +3933,14 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Correct";
     			attr_dev(i, "class", "fa fa-check");
-    			add_location(i, file$2, 177, 16, 6509);
+    			attr_dev(i, "tabindex", "0");
+    			attr_dev(i, "role", "button");
+    			attr_dev(i, "aria-label", "correct");
+    			add_location(i, file$2, 181, 16, 6859);
     			attr_dev(span, "class", "tooltiptext");
-    			add_location(span, file$2, 178, 16, 6552);
+    			add_location(span, file$2, 182, 16, 6950);
     			attr_dev(div, "class", "tooltip");
-    			add_location(div, file$2, 176, 14, 6470);
+    			add_location(div, file$2, 180, 14, 6820);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3820,7 +3957,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(176:12) {#if dummyarray.includes(JSON.parse(dataItem.content_text).question) && questioncorrect.includes(JSON.parse(dataItem.content_text).question)}",
+    		source: "(180:12) {#if dummyarray.includes(JSON.parse(dataItem.content_text).question) && questioncorrect.includes(JSON.parse(dataItem.content_text).question)}",
     		ctx
     	});
 
@@ -3864,14 +4001,14 @@ var app = (function () {
 
     	let if_block0 = show_if_2 && create_if_block_3$2(ctx);
 
-    	function select_block_type(ctx, dirty) {
+    	function select_block_type_1(ctx, dirty) {
     		if (show_if == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 9344) show_if = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) && /*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
     		if (show_if) return create_if_block_1$2;
     		if (show_if_1 == null || dirty[0] & /*dummyarray, $question, questioncorrect*/ 9344) show_if_1 = !!(/*dummyarray*/ ctx[7].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question) && !/*questioncorrect*/ ctx[10].includes(JSON.parse(/*dataItem*/ ctx[29].content_text).question));
     		if (show_if_1) return create_if_block_2$2;
     	}
 
-    	let current_block_type = select_block_type(ctx, [-1, -1]);
+    	let current_block_type = select_block_type_1(ctx, [-1, -1]);
     	let if_block1 = current_block_type && current_block_type(ctx);
 
     	const block = {
@@ -3979,7 +4116,7 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (current_block_type !== (current_block_type = select_block_type(ctx, dirty))) {
+    			if (current_block_type !== (current_block_type = select_block_type_1(ctx, dirty))) {
     				if (if_block1) if_block1.d(1);
     				if_block1 = current_block_type && current_block_type(ctx);
 
@@ -4034,7 +4171,7 @@ var app = (function () {
     	return block;
     }
 
-    // (193:0) {#if review}
+    // (197:0) {#if review}
     function create_if_block$2(ctx) {
     	let review_1;
     	let current;
@@ -4066,7 +4203,7 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(193:0) {#if review}",
+    		source: "(197:0) {#if review}",
     		ctx
     	});
 
@@ -4799,7 +4936,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(div, file$1, 149, 4, 3846);
+    			add_location(div, file$1, 149, 4, 3882);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4859,7 +4996,7 @@ var app = (function () {
     			t3 = space();
     			attr_dev(div, "class", "all-items");
     			attr_dev(div, "tabindex", "0");
-    			add_location(div, file$1, 151, 8, 3906);
+    			add_location(div, file$1, 151, 8, 3942);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -4939,9 +5076,9 @@ var app = (function () {
     			attr_dev(div0, "class", "all-items");
     			attr_dev(div0, "tabindex", "0");
     			toggle_class(div0, "hide", /*Raw_Attempt*/ ctx[3].length > 0);
-    			add_location(div0, file$1, 159, 6, 4137);
+    			add_location(div0, file$1, 159, 6, 4173);
     			attr_dev(div1, "class", "container-1");
-    			add_location(div1, file$1, 158, 4, 4104);
+    			add_location(div1, file$1, 158, 4, 4140);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -5005,7 +5142,7 @@ var app = (function () {
     			t3 = space();
     			attr_dev(div, "class", "all-items hid");
     			toggle_class(div, "shown", /*Raw_Attempt*/ ctx[3].includes(JSON.parse(/*dataItem*/ ctx[27].content_text).question));
-    			add_location(div, file$1, 163, 10, 4347);
+    			add_location(div, file$1, 163, 10, 4383);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5138,7 +5275,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(div, file$1, 171, 4, 4640);
+    			add_location(div, file$1, 171, 4, 4676);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5199,7 +5336,7 @@ var app = (function () {
     			div.textContent = "ALL ATTEMPTED";
     			attr_dev(div, "class", "all-items");
     			attr_dev(div, "tabindex", "0");
-    			add_location(div, file$1, 173, 8, 4689);
+    			add_location(div, file$1, 173, 8, 4725);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -5241,7 +5378,7 @@ var app = (function () {
     			t2 = text(t2_value);
     			attr_dev(div, "class", "all-items");
     			attr_dev(div, "tabindex", "0");
-    			add_location(div, file$1, 175, 8, 4803);
+    			add_location(div, file$1, 175, 8, 4839);
     			this.first = div;
     		},
     		m: function mount(target, anchor) {
@@ -5344,15 +5481,18 @@ var app = (function () {
     			add_location(div0, file$1, 135, 0, 3245);
     			attr_dev(h20, "class", "sub-heading");
     			attr_dev(h20, "tabindex", "0");
+    			attr_dev(h20, "accesskey", "1");
     			toggle_class(h20, "change", /*allitems*/ ctx[1] && !/*showatt*/ ctx[4] && !/*showunatt*/ ctx[5]);
     			add_location(h20, file$1, 138, 4, 3345);
     			attr_dev(h21, "class", "sub-heading");
     			attr_dev(h21, "tabindex", "0");
+    			attr_dev(h21, "accesskey", "2");
     			toggle_class(h21, "change", !/*allitems*/ ctx[1] && /*showatt*/ ctx[4] && !/*showunatt*/ ctx[5]);
-    			add_location(h21, file$1, 141, 4, 3502);
+    			add_location(h21, file$1, 141, 4, 3514);
     			attr_dev(h22, "class", "sub-heading");
+    			attr_dev(h22, "accesskey", "3");
     			toggle_class(h22, "change", !/*allitems*/ ctx[1] && !/*showatt*/ ctx[4] && /*showunatt*/ ctx[5]);
-    			add_location(h22, file$1, 144, 4, 3665);
+    			add_location(h22, file$1, 144, 4, 3689);
     			attr_dev(div1, "class", "heads");
     			add_location(div1, file$1, 137, 2, 3320);
     			attr_dev(div2, "class", "list");

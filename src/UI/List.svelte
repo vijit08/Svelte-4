@@ -136,13 +136,13 @@
 <div class="list-backdrop" on:click={closeModal} />
 <div class="list">
   <div class="heads">
-    <h2 class="sub-heading" tabindex="0" on:click={showitems} class:change={allitems && !showatt && !showunatt}>
+    <h2 class="sub-heading" tabindex="0" on:click={showitems} accesskey=1 class:change={allitems && !showatt && !showunatt}>
       All Items:{dummy.length}
     </h2>
-    <h2 class="sub-heading" tabindex="0" on:click={showattempt} class:change={!allitems && showatt && !showunatt}>
+    <h2 class="sub-heading" tabindex="0" on:click={showattempt} accesskey=2 class:change={!allitems && showatt && !showunatt}>
       Attempted:{Remove_Duplicate}
     </h2>
-    <h2 class="sub-heading" on:click={showunattempt} class:change={!allitems && !showatt && showunatt}>
+    <h2 class="sub-heading" on:click={showunattempt} accesskey=3 class:change={!allitems && !showatt && showunatt}>
       UnAttempted:{Raw_Unattempted}
     </h2>
   </div>

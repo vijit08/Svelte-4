@@ -90,17 +90,19 @@
     {#each $question as dataItem, i (dataItem)}
       {#if i == $current}
         <div class="review-question">
-          <div class="number">{i + 1}.</div>
+          <div class="number" tabindex="0">{i + 1}.</div>
           <div class="box" tabindex="0">{JSON.parse(dataItem.content_text).question}</div>
         </div>
         <div class="review-question-section" class:top-shift={i == 2}>
           {#each JSON.parse(dataItem.content_text).answers as ans, index (ans)}
-            <label tabindex="0" for="ans{index}" id="option{index}" class="radio" class:bold={ans.is_correct == 1} class:not-bold={currentselect.includes(ans.answer) &&
-              ans.is_correct == 0}>{String.fromCharCode(65 + index)}
-              <input class="radio_input" type="radio" name="ans" id="ans{index}" is_correct={ans.is_correct} value={ans.answer}
+            <label tabindex="-1" for="ans{index}" id="option{index}" class="radio" class:bold={ans.is_correct == 1} class:not-bold={currentselect.includes(ans.answer) &&
+              ans.is_correct == 0}>
+              <span tabindex="0">{String.fromCharCode(65 + index)}</span>
+              <input class="radio_input" tabindex="0" type="radio" name="ans" id="ans{index}" is_correct={ans.is_correct} value={ans.answer}
                 checked={ans.answer && ans.is_correct == 1 ? true : false} disabled="disabled"/>
-                <div class:radio_radio={ans.is_correct == 1 || ans.answer} class:wrong={$selectedanswer[i]==ans.answer &&
-                  ans.is_correct == 0}/>{@html ans.answer}
+              <div tabindex="0" role="textbox" aria-label={ans.answer&&ans.is_correct==1?"OPTION IS CORRECT":"OPTION IS INCORRECT"} class:radio_radio={ans.is_correct == 1 || ans.answer} class:wrong={$selectedanswer[i]==ans.answer &&
+                ans.is_correct == 0}/>
+              <span tabindex="0">{@html ans.answer}</span>
             </label>
           {/each}
         </div>
